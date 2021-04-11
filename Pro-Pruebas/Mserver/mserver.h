@@ -10,45 +10,24 @@
 namespace Ui {
 class mserver;
 }
-/**
- * @brief Constructor de interface del mserver
- *
- */
+
 class mserver : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    memory *data= new memory(); /**< Variable de manajador de memoria */
-    /**
-     * @brief Comunicador de la creacion de la interface
-     *
-     * @param parent
-     */
+    memory *data= new memory(); // Variable de manejo de memoria
     explicit mserver(QWidget *parent = 0);
-    /**
-     * @brief Método para eliminar la creacion de la interface
-     *
-     */
     ~mserver();
 
 public slots:
-    /**
-     * @brief Método para establecer la comunicación con el cliente
-     *
-     */
+    // establecer la comunicación con el cliente
     void conexion_nueva();
-    /**
-     * @brief Método para leer los datos enviado por el cliente
-     *
-     */
+    // leer los datos enviado por el cliente
     void leer_socketcliente();
 
 private slots:
-    /**
-     * @brief Método para establecer la conexión con el cliente
-     *
-     */
+    // establecer la conexión con el cliente
     void on_client1_clicked(const QString da);
 
 private:
