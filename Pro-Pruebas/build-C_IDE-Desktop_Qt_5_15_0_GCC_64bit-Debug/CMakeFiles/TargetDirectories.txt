@@ -1,0 +1,5 @@
+/home/paoqch/Music/Pro-Pruebas/build-C_IDE-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/paoqch/Music/Pro-Pruebas/build-C_IDE-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/paoqch/Music/Pro-Pruebas/build-C_IDE-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/C_IDE.dir
+/home/paoqch/Music/Pro-Pruebas/build-C_IDE-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/C_IDE_autogen_timestamp_deps.dir
+/home/paoqch/Music/Pro-Pruebas/build-C_IDE-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/C_IDE_autogen.dir

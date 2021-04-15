@@ -1,0 +1,77 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Mserver",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Mserver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Mserver-Debug-a48d394b2a843fbc5998.json",
+					"name" : "Mserver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Mserver_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Mserver_autogen-Debug-f5792813d32d98f85817.json",
+					"name" : "Mserver_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Mserver_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Mserver_autogen_timestamp_deps-Debug-d4cf67f8ce0672c3c97b.json",
+					"name" : "Mserver_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/paoqch/Music/Pro-Pruebas/build-Mserver-Desktop_Qt_5_15_0_GCC_64bit-Debug",
+		"source" : "/home/paoqch/Music/Pro-Pruebas/Mserver"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

@@ -1,0 +1,5 @@
+/home/paoqch/Music/Pro-Pruebas/build-Mserver-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/paoqch/Music/Pro-Pruebas/build-Mserver-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/paoqch/Music/Pro-Pruebas/build-Mserver-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/Mserver.dir
+/home/paoqch/Music/Pro-Pruebas/build-Mserver-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/Mserver_autogen_timestamp_deps.dir
+/home/paoqch/Music/Pro-Pruebas/build-Mserver-Desktop_Qt_5_15_0_GCC_64bit-Debug/CMakeFiles/Mserver_autogen.dir
