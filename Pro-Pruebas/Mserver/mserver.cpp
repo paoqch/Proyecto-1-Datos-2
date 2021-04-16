@@ -1,7 +1,6 @@
 //#include "ui_mserver.h"
 #include "logger.h"
 #include "mserver.h"
-#include "variablelist.h"
 #include <iostream>
 #include "memory.h"
 #include <string>

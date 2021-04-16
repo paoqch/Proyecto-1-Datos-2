@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16.3)
 
 project(Mserver LANGUAGES CXX)
 
@@ -8,13 +8,13 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 14)
+
 
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
-find_package(Qt5Quick REQUIRED)
 find_package(Qt5Network REQUIRED)
+
 
 add_executable(Mserver
         main.cpp
@@ -25,9 +25,14 @@ add_executable(Mserver
         logger.h
         memory.h
         memory.cpp
+        node.cpp
+        node.h
+        memoryblock.cpp
+        memoryblock.h
+
 )
+
 
 target_link_libraries(Mserver Qt5::Core)
 target_link_libraries(Mserver Qt5::Widgets)
-target_link_libraries(Mserver Qt5::Quick)
 target_link_libraries(Mserver Qt5::Network)

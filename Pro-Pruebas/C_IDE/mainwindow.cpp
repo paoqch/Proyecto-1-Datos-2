@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "iostream"
+#include <iostream>
 #include "logger.h"
 #include <string>
 #include <fstream>
@@ -9,6 +9,7 @@
 #include "QJsonDocument"
 #include <stdio.h>
 #include <unistd.h>
+#include <vector>
 using namespace std;
 
 logger *l1 = new logger();
@@ -32,6 +33,10 @@ MainWindow::~MainWindow()
 void MainWindow::on_RunButton_clicked()
 {
     string codigo = ui->CodeTextArea->toPlainText().toStdString();
+    convertidor->SplitString(codigo, '\n', linesCode);
+
+    cout << linesCode[0];
+
     addOutputArea();
     ui->RAM_view->insertRow(ui->RAM_view->rowCount());
     int fila = ui->RAM_view->rowCount() -1;
@@ -102,3 +107,13 @@ void MainWindow::on_clear_clicked()
     ui->Application_Log->clear();
 }
 
+
+void MainWindow::on_Next_clicked()
+{
+    vector<string> coding;
+    cout << linesCode[0];
+    string instructions = convertidor->EliminarEspacios(linesCode[0]);
+
+
+
+}

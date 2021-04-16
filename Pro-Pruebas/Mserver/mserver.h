@@ -6,7 +6,6 @@
 #include <QtNetwork/QTcpServer>
 #include <QtNetwork/QTcpSocket>
 #include <QHostAddress>
-#include "variablelist.h"
 
 namespace Ui {
 class mserver;
@@ -35,8 +34,6 @@ public:
     QTcpSocket * client;
     mserver *servidor;
 
-    //Objeto que maneja la memoria dentro del servidor
-    variablelist *vl;
 
 };
 #endif // MSERVER_H

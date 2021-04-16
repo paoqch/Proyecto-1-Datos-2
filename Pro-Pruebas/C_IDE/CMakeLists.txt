@@ -13,7 +13,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
-find_package(Qt5Quick REQUIRED)
 find_package(Qt5Network REQUIRED)
 
 add_executable(C_IDE
@@ -25,9 +24,10 @@ add_executable(C_IDE
         logger.cpp
         client.h
         client.cpp
+        stringparse.cpp
+        stringparse.h
 )
 
 target_link_libraries(C_IDE Qt5::Core)
 target_link_libraries(C_IDE Qt5::Widgets)
-target_link_libraries(C_IDE Qt5::Quick)
 target_link_libraries(C_IDE Qt5::Network)

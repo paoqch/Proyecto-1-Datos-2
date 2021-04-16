@@ -10,6 +10,11 @@
 #else
 #include <QtGui/QMainWindow>
 #endif
+#include <iostream>
+#include <string>
+#include <vector>
+#include "stringparse.h"
+using namespace std;
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +28,9 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
     Client *cliente;
+    int i = 0;
+    vector<string> linesCode;
+    StringParse *convertidor = new StringParse();
 
 private slots:
     // acciones de botones
@@ -42,6 +50,8 @@ private slots:
 
     void createClient();
 
+
+    void on_Next_clicked();
 
 private:
    Ui::MainWindow *ui;
