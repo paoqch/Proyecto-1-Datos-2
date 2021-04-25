@@ -32,10 +32,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_RunButton_clicked()
 {
-    string codigo = ui->CodeTextArea->toPlainText().toStdString();
+    string codigo = ui->CodeTextArea->toPlainText().toStdString() +'\n';
     convertidor->SplitString(codigo, '\n', linesCode);
-
-    cout << linesCode[0];
 
     addOutputArea();
     ui->RAM_view->insertRow(ui->RAM_view->rowCount());
@@ -110,9 +108,69 @@ void MainWindow::on_clear_clicked()
 
 void MainWindow::on_Next_clicked()
 {
-    vector<string> coding;
-    cout << linesCode[0];
-    string instructions = convertidor->EliminarEspacios(linesCode[0]);
+
+    if (i < linesCode.size()){
+        string instruccions = convertidor->EliminarEspacios( linesCode[i]);
+        vector<string> line;
+
+        convertidor->SplitString(instruccions, '#', line);
+
+        string valorEnviar;
+
+        if(line[0] == "int"){
+
+            valorEnviar = convertidor->GenerarInt(line);
+            cout << valorEnviar;
+
+        }else if (line[0] == "char"){
+
+            valorEnviar = convertidor->GenerarChar(line);
+            cout << valorEnviar;
+
+        }else if (line[0] == "long"){
+
+            valorEnviar = convertidor->GenerarLong(line);
+            cout << valorEnviar;
+
+        }else if (line[0] == "double"){
+
+            valorEnviar = convertidor->GenerarDouble(line);
+            cout << valorEnviar;
+
+        }else if (line[0] == "float"){
+
+            valorEnviar = convertidor->GenerarFloat(line);
+            cout << valorEnviar;
+
+        }else if (line[0] == "{"){
+
+            valorEnviar = "Generate";
+
+        }else if(line[0] == "}"){
+
+            valorEnviar = "Eliminar";
+
+        }else if (line[0] == "reference"){
+
+            valorEnviar = convertidor->GenerarReference(line);
+            cout << valorEnviar;
+
+        }else if(line[0] == "cout"){
+
+            valorEnviar = convertidor->GenerarCout(line);
+
+        }
+
+        if(valorEnviar == "error"){
+            //EJECUTAR ERROR
+        }
+
+        cout << valorEnviar;
+        line.clear();
+        i++;
+
+
+    }
 
 
 
