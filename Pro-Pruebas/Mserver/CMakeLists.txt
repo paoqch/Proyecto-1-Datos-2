@@ -23,14 +23,12 @@ add_executable(Mserver
         mserver.ui
         logger.cpp
         logger.h
-        memory.h
-        memory.cpp
         node.cpp
         node.h
         memoryblock.cpp
         memoryblock.h
 
-)
+        FacadeMemory.cpp FacadeMemory.h)
 
 
 target_link_libraries(Mserver Qt5::Core)
