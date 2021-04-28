@@ -16,16 +16,27 @@ class MemoryBlock {
 private:
 
     int size = 0;
+    int start;
+    int finish;
 
     Node<int> *mem = (Node<int> *) malloc(1024 * 1024 * 10);
+
+    vector<int> garbage;
 
 public:
 
     template<class T>
     void AddData(T data, string name) {
-        Node<T> *temp = new(mem+size) Node<T>(data,name);
-        size++;
+        if(garbage.empty()){
+            Node<T> *temp = new(mem+size) Node<T>(data,name);
+            size++;
+        } else{
+            Node<T> *temp = new(mem+garbage.back()) Node<T>(data,name);
+            garbage.pop_back();
+        }
+
     }
+
 
     template<class T>
     void UpdateData(T data, string name) {
@@ -64,6 +75,36 @@ public:
 
                 return dataValues;
             }
+        }
+    }
+
+    void Delete() {
+        for (int i = 0; i < size; i++) {
+            if (mem[i].GetIndex() == 1) {
+                garbage.push_back(i);
+            }
+        }
+    }
+
+    void Imprimir() {
+        for (int i = 0; i < size; i++) {
+            cout << mem[i].GetName() << endl;
+        }
+    }
+
+    void Start(){
+        start = size;
+    }
+
+    void Finish(){
+        finish = size;
+    }
+
+    void DeleteBlockMemory(){
+        for(int i = this->start; i != finish; i ++){
+            mem[i].name = "error";
+            mem[i].data = NULL;
+            garbage.push_back(i);
         }
     }
 
