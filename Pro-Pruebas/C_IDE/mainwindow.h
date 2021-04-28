@@ -29,6 +29,7 @@ public:
     ~MainWindow();
     Client *cliente;
     int i = 0;
+    StringParse parser;
     vector<string> linesCode;
     StringParse *convertidor = new StringParse();
 
@@ -38,6 +39,7 @@ private slots:
     void on_clear_clicked();
     void on_stop_clicked();
     void on_pushButton_clicked();
+    void on_Next_clicked();
 
     void addOutputArea();
     void addStdOutArea(QString linea);
@@ -48,10 +50,11 @@ private slots:
     void addEtiqueta(int fila, QString label);
     void addReferencia(int fila);
 
+
     void createClient();
+    void sendData(string data);
+    void reiniciarParseo();
 
-
-    void on_Next_clicked();
 
 private:
    Ui::MainWindow *ui;
