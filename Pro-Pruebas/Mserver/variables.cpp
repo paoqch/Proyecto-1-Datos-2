@@ -11,9 +11,7 @@
 
 using namespace std;
 
-variables::variables()
-{
-    mallocPtr = new Malloc(1024);
+variables::variables(){
 }
 
 QString variables::preparation(QJsonObject object){
@@ -44,15 +42,19 @@ QString variables::preparation(QJsonObject object){
 
 string variables::analizarValor(string valor, string tipo){
 
-    ///
-    ///Operaciones con enteros
-    ///
-
     if (tipo == "int"){
         return valor;
     }
 
-    if (tipo == "double"){
+    else if (tipo == "double"){
+        return valor;
+    }
+    
+    else if (tipo == "float"){
+        return valor;
+    }
+    
+    else if (tipo == "long"){
         return valor;
     }
 
