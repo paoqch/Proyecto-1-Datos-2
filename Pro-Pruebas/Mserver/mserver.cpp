@@ -2,13 +2,16 @@
 #include "logger.h"
 #include "mserver.h"
 #include <iostream>
-#include "memory.h"
+#include "node.h"
+#include "memoryblock.h"
+#include "variables.h"
 #include <string>
 using namespace std;
 
 logger *l1 = new logger();
 
 mserver::mserver(QObject* parent , quint16 port): QTcpServer(parent){
+    vl = new variables();
     firstTime = true;
     if(!servidor){
         servidor = this;
@@ -16,7 +19,7 @@ mserver::mserver(QObject* parent , quint16 port): QTcpServer(parent){
   connect(this, SIGNAL(newConnection()),this, SLOT(acceptConnection()));
 
   if (!this->listen(QHostAddress::Any, port)){
-          qDebug() << "ERROR";
+          qDebug() << "ERROR PORT IS IN USE";
   }
 }
 
@@ -32,10 +35,52 @@ void mserver::acceptConnection()
 {
   client = nextPendingConnection();
 
-  //connect(client, SIGNAL(readyRead()), this, SLOT(startRead()));
+  connect(client, SIGNAL(readyRead()), this, SLOT(startRead()));
   connect(client, SIGNAL(disconnected()), this, SLOT(disconnected()));
 
   qDebug() << "Se ha conectado el cliente";
+}
+
+
+void mserver::startRead()
+{
+    while(client->canReadLine())
+    {
+        QString line = QString::fromUtf8(client->readAll().trimmed());
+        cout << "Client :\n" << line.toUtf8().constData() << endl;
+
+        if (firstTime == true){
+            sendMessage(QString("Conexion establecida con el servidor"));
+            firstTime = false;
+        }
+        else{
+            QJsonObject obj;
+            QJsonDocument doc = QJsonDocument::fromJson(line.toUtf8());
+            obj = doc.object();
+
+            QString finalValue = vl->preparation(obj);
+
+            QString qstr;
+            QJsonObject* jobj = new QJsonObject();
+            QJsonValue* jstring1 = new QJsonValue(obj.value("Variable").toString());
+            QJsonValue* jstring2 = new QJsonValue(finalValue);
+            cout << jstring1;
+            cout << jstring2;
+            QJsonValue* jstring3 = new QJsonValue(qstr);
+            jobj->insert("Label",jstring1->toString());
+            jobj->insert("Value",jstring2->toString());
+            jobj->insert("Address",jstring3->toString());
+            QJsonDocument doc2(*jobj);
+            QByteArray bytes = doc2.toJson();
+            const char* charString = bytes.data();
+            string json(charString);
+            QString message = json.c_str();
+
+            qDebug() << message;
+            sendMessage(message);
+            break;
+        }
+    }
 }
 
 
