@@ -6,6 +6,8 @@
 #include <QtNetwork/QTcpServer>
 #include <QtNetwork/QTcpSocket>
 #include <QHostAddress>
+#include "memoryblock.h"
+#include "variables.h"
 
 namespace Ui {
 class mserver;
@@ -22,7 +24,7 @@ public:
 
 private slots:
     void acceptConnection();
-    //void startRead();
+    void startRead();
     void disconnected();
 
 public:
@@ -34,6 +36,7 @@ public:
     QTcpSocket * client;
     mserver *servidor;
 
+    variables *vl;
 
 };
 #endif // MSERVER_H
