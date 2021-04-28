@@ -36,16 +36,35 @@ void MainWindow::on_RunButton_clicked()
     convertidor->SplitString(codigo, '\n', linesCode);
 
     addOutputArea();
-    ui->RAM_view->insertRow(ui->RAM_view->rowCount());
-    int fila = ui->RAM_view->rowCount() -1;
 
-    addMemoryDirection(fila,cliente->jsonActual.value("Address").toString());
-    addValor(fila,cliente->jsonActual.value("Value").toString());
-    addEtiqueta(fila,cliente->jsonActual.value("Label").toString());
-    addReferencia(fila);
+    string instruccions = convertidor->EliminarEspacios( linesCode[i]);
+    vector<string> line;
+    convertidor->SplitString(instruccions, '#', line);
 
-    QString linea = QString("");
-    addOutputArea();
+
+    QJsonObject objeto = parser.parse(line);
+    QJsonDocument doc(objeto);
+    QByteArray bytes = doc.toJson();
+    const char* charString = bytes.data();
+    string someString(charString);
+    sendData(someString);
+
+    if(cliente->jsonActual.isEmpty()){
+        ui->RAM_view->rowCount();
+    }else {
+        //ui->RunButton->click();
+        //addOutputArea();
+        ui->RAM_view->insertRow(ui->RAM_view->rowCount());
+        int fila = ui->RAM_view->rowCount() -1;
+
+        addMemoryDirection(fila,cliente->jsonActual.value("Address").toString());
+        addValor(fila,cliente->jsonActual.value("Value").toString());
+        addEtiqueta(fila,cliente->jsonActual.value("Label").toString());
+        addReferencia(fila);
+
+        QString linea = QString("");
+        addOutputArea();
+    }
 }
 
 //Envia al Stdout la informacion recibida
@@ -61,17 +80,17 @@ void MainWindow::addOutputArea(){
 
 //Añade una direccion de memoria address al RAM Live View
 void MainWindow::addMemoryDirection(int fila, QString address){
-    ui->RAM_view->setItem(fila,Direccion,new QTableWidgetItem("address"));
+    ui->RAM_view->setItem(fila,Direccion,new QTableWidgetItem(address));
 }
 
 // Añade un valor value al RAM Live View
 void MainWindow::addValor(int fila,QString value){
-    ui->RAM_view->setItem(fila,Valor,new QTableWidgetItem("value"));
+    ui->RAM_view->setItem(fila,Valor,new QTableWidgetItem(value));
 }
 
 //Añade una etiqueta label al RAM Live View
 void MainWindow::addEtiqueta(int fila,QString label){
-    ui->RAM_view->setItem(fila, Etiqueta,new QTableWidgetItem("label"));
+    ui->RAM_view->setItem(fila, Etiqueta,new QTableWidgetItem(label));
 }
 
 //Añade una cantidad de referencias al RAM Live View
