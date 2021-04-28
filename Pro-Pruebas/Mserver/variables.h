@@ -13,9 +13,7 @@ struct Node{
     double valuedouble;
     char valuechar;
     QString type;
-    QString label;
-    Node *next;
-    void* ptr;
+    QString label;=
     QString address;
 };
 class variables{
