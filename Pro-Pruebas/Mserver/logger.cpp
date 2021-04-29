@@ -5,7 +5,13 @@ logger::logger()
 
 }
 
-
+/**
+ * @brief logger::logMessage
+ * Manejo de los mensajes del Application Logs
+ * @param type
+ * @param message
+ * @return
+ */
 QString logger::logMessage(int type, QString message)
 {
     QString timestamp = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
@@ -32,3 +38,4 @@ QString logger::logMessage(int type, QString message)
     }
     return messageLog;
 }
+
