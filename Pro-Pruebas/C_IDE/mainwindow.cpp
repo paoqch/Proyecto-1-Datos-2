@@ -116,6 +116,8 @@ void MainWindow::on_stop_clicked()
 {
     stop_stop = false;
     ui->Application_Log->appendPlainText(l1->logMessage(1,"Se detuvo la ejecucion"));
+    i = 0;
+    linesCode.clear();
 }
 
 //Metodo para limpiar el app log
@@ -124,6 +126,7 @@ void MainWindow::on_clear_clicked()
     ui->Application_Log->clear();
 }
 
+/// método para el interprete
 
 void MainWindow::on_Next_clicked()
 {

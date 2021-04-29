@@ -73,6 +73,7 @@ void FacadeMemory::EndBlock() {
 }
 
 void FacadeMemory::GetValues(string name) {
+
     vector<string> valuesStr = memBlock->GetValues(name);
 
     QVariant addres(QString::fromStdString(valuesStr[0]));

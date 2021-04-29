@@ -42,7 +42,6 @@ public:
     void GetData(string name);
     void GetValues(string name);
 
-
 };
 
 

@@ -94,6 +94,10 @@ QJsonObject StringParse::getType(vector<string> line){
 }
 
 
+/// Función split para separar el stiring y generar el vector de string
+/// \param texto string que se quiere parsea
+/// \param del delimitador
+/// \param v vector a cambiar
 void StringParse::SplitString(const string& texto, char del, vector<string>& v){
 
     string::size_type i = 0;
@@ -114,7 +118,9 @@ void StringParse::SplitString(const string& texto, char del, vector<string>& v){
     }
 
 }
-
+/// Elimina los espacios de un string y delimita los elementos por un -
+/// \param texto string a quitar los espacios y remplazarlo por -
+/// \return string
 string StringParse::EliminarEspacios(string texto){
 
     string resultado;
@@ -137,7 +143,9 @@ string StringParse::EliminarEspacios(string texto){
     }
     return resultado;
 }
-
+/// Verifica que la sintaxis está bien
+/// \param v vector
+/// \return booleano dependiendo si está correcto
 bool StringParse::VerificarEspacios(vector<string> v) {
 
     if(v[2] != "="){
@@ -152,7 +160,9 @@ bool StringParse::VerificarEspacios(vector<string> v) {
 
     return true;
 }
-
+/// Verifica si el número esta correcto
+/// \param instruccion string
+/// \return booleano
 int StringParse::VerificarNumero(string instruccion) {
 
     int numeros = 0;
@@ -185,7 +195,9 @@ int StringParse::VerificarNumero(string instruccion) {
 
 
 }
-
+/// Obtiene el número del servidor
+/// \param name string
+/// \return string
 string StringParse::ObtenerNumero(string name) {
 
     int accion = VerificarNumero(name);
@@ -198,7 +210,8 @@ string StringParse::ObtenerNumero(string name) {
         return "error";
     }
 }
-
+/// Verifica si esta el punto y coma
+/// \param line &vector
 void StringParse::VerificarPuntoyComa(vector<string> &line) {
     string puntoComa = line.back();
     puntoComa.pop_back();
@@ -207,6 +220,9 @@ void StringParse::VerificarPuntoyComa(vector<string> &line) {
     line.push_back(";");
 }
 
+/// Verifica si el cout esta bien
+/// \param instruccion string
+/// \return int
 int StringParse::VerificarCout(string instruccion) {
     int comillas = 0;
     int letras = 0;
@@ -232,7 +248,9 @@ int StringParse::VerificarCout(string instruccion) {
         return 2;
     }
 }
-
+/// Genera el string para el int que se envia al servidor
+/// \param line vector
+/// \return string
 string StringParse::GenerarInt(vector<string> line) {
 
     string mensaje;
@@ -312,7 +330,9 @@ string StringParse::GenerarInt(vector<string> line) {
 
     return "error";
 }
-
+/// Genera el string para el char que se envia al servidor
+/// \param line vector
+/// \return string
 string StringParse::GenerarChar(vector<string> line) {
 
     string mensaje;
@@ -332,7 +352,9 @@ string StringParse::GenerarChar(vector<string> line) {
 
     return "error";
 }
-
+/// Genera el string para el double que se envia al servidor
+/// \param line vector
+/// \return string
 string StringParse::GenerarDouble(vector<string> line) {
 
     string mensaje;
@@ -409,7 +431,9 @@ string StringParse::GenerarDouble(vector<string> line) {
     }
     return "error";
 }
-
+/// Genera el long para el double que se envia al servidor
+/// \param line vector
+/// \return string
 string StringParse::GenerarLong(vector<string> line) {
 
     string mensaje;
@@ -487,7 +511,9 @@ string StringParse::GenerarLong(vector<string> line) {
 
     return "error";
 }
-
+/// Genera el string para el float que se envia al servidor
+/// \param line vector
+/// \return string
 string StringParse::GenerarFloat(vector<string> line) {
 
     string mensaje;
@@ -567,7 +593,9 @@ string StringParse::GenerarFloat(vector<string> line) {
     return "error";
 
 }
-
+/// Verificar si el cout está correcto
+/// \param line vector
+/// \return string
 string StringParse::GenerarCout(vector<string> line) {
 
     string mensaje;
@@ -595,7 +623,9 @@ string StringParse::GenerarCout(vector<string> line) {
     return "error";
 
 }
-
+/// Genera el string para el reference que se envia al servidor
+/// \param line vector
+/// \return string
 string StringParse::GenerarReference(vector<string> line) {
 
     string mensaje;
