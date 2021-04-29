@@ -16,6 +16,10 @@
 #include "stringparse.h"
 using namespace std;
 
+/**
+ * Clase MainWindow
+ * Interfaz que permite escribir codigo
+ */
 namespace Ui {
 class MainWindow;
 }
