@@ -15,7 +15,9 @@
 
 using namespace std;
 using std::string;
-
+/**
+ * @brief The StringParse class
+ */
 class StringParse
 {
 public:
