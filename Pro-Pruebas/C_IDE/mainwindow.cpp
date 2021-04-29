@@ -10,12 +10,17 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <vector>
+#include "stringparse.h"
 using namespace std;
 
 logger *l1 = new logger();
 bool stop_stop = false; //Variable para detener la lectura de code_edit
 
-
+/**
+ * @brief MainWindow::MainWindow
+ * Interfaz que permite escribir codigo
+ * @param parent
+ */
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow){
     ui->setupUi(this);
     setWindowTitle("C! - IDE");
@@ -24,18 +29,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     createClient();
 }
 
-
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow(){
     delete ui;
 }
 
-void MainWindow::on_RunButton_clicked()
-{
+/**
+ * @brief MainWindow::on_RunButton_clicked
+ * Ejecuta el codigo
+ */
+void MainWindow::on_RunButton_clicked(){
     string codigo = ui->CodeTextArea->toPlainText().toStdString() +'\n';
     convertidor->SplitString(codigo, '\n', linesCode);
-
-    addOutputArea();
 
     string instruccions = convertidor->EliminarEspacios( linesCode[i]);
     vector<string> line;
@@ -67,33 +71,59 @@ void MainWindow::on_RunButton_clicked()
     }
 }
 
-//Envia al Stdout la informacion recibida
+/**
+ * @brief MainWindow::addStdOutArea
+ * @param linea
+ * Envia al Stdout la informacion recibida
+ */
 void MainWindow::addStdOutArea(QString linea){
     ui->Stdout->appendPlainText(linea);
 }
 
-//Log de ejecucion
+/**
+ * @brief MainWindow::addOutputArea
+ * Log de ejecucion
+ */
 void MainWindow::addOutputArea(){
     ui->Application_Log->appendPlainText(l1->logMessage(0,"Empezando ejecucion..."));
     ui->Application_Log->appendPlainText(l1->logMessage(0,"Enviando la informacion al servidor..."));
 }
 
-//Añade una direccion de memoria address al RAM Live View
+/**
+ * @brief MainWindow::addMemoryDirection
+ * @param fila
+ * @param address
+ * Añade una direccion de memoria address al RAM Live View
+ */
 void MainWindow::addMemoryDirection(int fila, QString address){
     ui->RAM_view->setItem(fila,Direccion,new QTableWidgetItem(address));
 }
 
-// Añade un valor value al RAM Live View
+/**
+ * @brief MainWindow::addValor
+ * @param fila
+ * @param value
+ * Añade un valor value al RAM Live View
+ */
 void MainWindow::addValor(int fila,QString value){
     ui->RAM_view->setItem(fila,Valor,new QTableWidgetItem(value));
 }
 
-//Añade una etiqueta label al RAM Live View
+/**
+ * @brief MainWindow::addEtiqueta
+ * @param fila
+ * @param label
+ * Añade una etiqueta label al RAM Live View
+ */
 void MainWindow::addEtiqueta(int fila,QString label){
     ui->RAM_view->setItem(fila, Etiqueta,new QTableWidgetItem(label));
 }
 
-//Añade una cantidad de referencias al RAM Live View
+/**
+ * @brief MainWindow::addReferencia
+ * @param fila
+ * Añade una cantidad de referencias al RAM Live View
+ */
 void MainWindow::addReferencia(int fila){
     ui->RAM_view->setItem(fila,Referencias,new QTableWidgetItem("1"));
 }
@@ -105,32 +135,52 @@ void MainWindow::createClient(){
      ui->Application_Log->appendPlainText(l1->logMessage(0,"Estableciendo conexion con el servidor..."));
 }
 
-//Metodo para reiniciar la ejecucion
-void MainWindow::on_pushButton_clicked()
-{
-    ui->Application_Log->appendPlainText(l1->logMessage(1,"Se reinicio el sistema..."));
+/**
+ * @brief MainWindow::on_pushButton_clicked
+ * Metodo para reiniciar la ejecucion
+ */
+void MainWindow::on_pushButton_clicked(){
+    reiniciarParseo();
 }
 
-//Metodo para detener la ejecucion
-void MainWindow::on_stop_clicked()
-{
+/**
+ * @brief MainWindow::on_stop_clicked
+ * Metodo para detener la ejecucion
+ */
+void MainWindow::on_stop_clicked(){
     stop_stop = false;
     ui->Application_Log->appendPlainText(l1->logMessage(1,"Se detuvo la ejecucion"));
-    i = 0;
-    linesCode.clear();
 }
 
-//Metodo para limpiar el app log
-void MainWindow::on_clear_clicked()
-{
+/**
+ * @brief MainWindow::sendData
+ * @param data
+ * Envia una data en JSON al servidor
+ */
+void MainWindow::sendData(string data){
+    cliente->SendData(QString(data.c_str()));
+}
+
+/**
+ * @brief MainWindow::on_clear_clicked
+ * Metodo para limpiar el app log
+ */
+void MainWindow::on_clear_clicked(){
     ui->Application_Log->clear();
 }
 
-/// método para el interprete
+/**
+ * @brief MainWindow::reiniciarParseo
+ * Reinicia el puntero del parser
+ */
+void MainWindow::reiniciarParseo(){
+    ui->Application_Log->appendPlainText(l1->logMessage(1,"Se reinicio el sistema..."));
+}
 
-void MainWindow::on_Next_clicked()
-{
-
+/**
+ * @brief MainWindow::on_Next_clicked
+ */
+void MainWindow::on_Next_clicked(){
     if (i < linesCode.size()){
         string instruccions = convertidor->EliminarEspacios( linesCode[i]);
         vector<string> line;
@@ -193,7 +243,4 @@ void MainWindow::on_Next_clicked()
 
 
     }
-
-
-
 }
