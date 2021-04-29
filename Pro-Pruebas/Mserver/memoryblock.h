@@ -25,6 +25,11 @@ private:
 
 public:
 
+    /// Añadir un elemento a la memoria
+    /// \tparam T template
+    /// \param data T
+    /// \param name string
+
     template<class T>
     void AddData(T data, string name) {
         if(garbage.empty()){
@@ -37,7 +42,10 @@ public:
 
     }
 
-
+    /// Actualizard datos
+    /// \tparam T
+    /// \param data T
+    /// \param name string
     template<class T>
     void UpdateData(T data, string name) {
         for (int i = 0; i < size ; i++) {
@@ -47,7 +55,9 @@ public:
             }
         }
     }
-
+    /// Obtener el dato
+    /// \param name
+    /// \return T
     auto GetData(string name){
         for (int i = 0; i < size ; i++) {
             if (mem[i].GetName() == name){
@@ -57,6 +67,9 @@ public:
         }
     }
 
+    /// Crea un vector que obtiene la información del nodo
+    /// \param name string
+    /// \return vector<string>
     vector<string> GetValues(string name){
         for (int i = 0; i < size ; i++) {
             if (mem[i].GetName() == name) {
@@ -78,6 +91,7 @@ public:
         }
     }
 
+    /// Garbage collector
     void Delete() {
         for (int i = 0; i < size; i++) {
             if (mem[i].GetIndex() == 1) {
@@ -86,20 +100,24 @@ public:
         }
     }
 
+    ///imprimir los valores
     void Imprimir() {
         for (int i = 0; i < size; i++) {
             cout << mem[i].GetName() << endl;
         }
     }
 
+    ///Inicia bloque de memoria
     void Start(){
         start = size;
     }
 
+    ///finaliza bloque de memoria
     void Finish(){
         finish = size;
     }
 
+    /// Borra el garbage collector
     void DeleteBlockMemory(){
         for(int i = this->start; i != finish; i ++){
             mem[i].name = "error";
