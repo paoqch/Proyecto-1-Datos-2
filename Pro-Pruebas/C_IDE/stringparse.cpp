@@ -22,11 +22,19 @@
 using namespace std;
 using std::string;
 
+/**
+ * @brief StringParse::StringParse
+ */
 StringParse::StringParse()
 {
-
+    i = 0;
 }
-
+/**
+ * @brief StringParse::parse
+ * @param line
+ * @return
+ * Mete la informacion recibida y enviada a un area de texto
+ */
 QJsonObject StringParse::parse(vector<string> line){
     if(i >= line.size()){
         QJsonObject termino = makeJson("Finish", "Finish", "Finish");
@@ -45,6 +53,13 @@ void StringParse::readFile(){
 
 }
 
+/**
+ * @brief StringParse::makeJson
+ * @param tip
+ * @param val
+ * @param var
+ * @return
+ */
 QJsonObject StringParse::makeJson(string tip, string val, string var){
     QJsonObject object
         {
@@ -63,6 +78,12 @@ QJsonObject StringParse::makeJson(string tip, string val, string var){
         return object;
 }
 
+/**
+ * @brief StringParse::getType
+ * @param line
+ * @return
+ * Identifica el tipo de variable y lo pasa a un Json
+ */
 QJsonObject StringParse::getType(vector<string> line){
     do{
         if(line[0] == "int"){
