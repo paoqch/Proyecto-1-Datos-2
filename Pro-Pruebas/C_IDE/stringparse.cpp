@@ -663,7 +663,12 @@ string StringParse::GenerarReference(vector<string> line) {
     return "error";
 }
 
-
+/**
+ * @brief StringParse::getVariable
+ * @param line
+ * @return
+ * Retorna el nombre de las variable
+ */
 string StringParse::getVariable(vector<string> line) {
 
     string nombreVariable;
@@ -698,6 +703,12 @@ string StringParse::getVariable(vector<string> line) {
     }
 }
 
+/**
+ * @brief StringParse::getValor
+ * @param line
+ * @return
+ * Retorna el valor de la variable
+ */
 string StringParse::getValor(vector<string> line) {
 
     string valorVariable;
@@ -729,6 +740,12 @@ string StringParse::getValor(vector<string> line) {
     }
 }
 
+/**
+ * @brief StringParse::getValorChar
+ * @param line
+ * @return
+ * Mete la informacion recibida y enviada a un area de texto
+ */
 string StringParse::getValorChar(vector<string> line) {
 
     string valorVariable;
