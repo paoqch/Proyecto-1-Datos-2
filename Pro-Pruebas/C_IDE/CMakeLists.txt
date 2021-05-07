@@ -22,10 +22,11 @@ add_executable(C_IDE
         mainwindow.ui
         logger.h
         logger.cpp
-        client.h
-        client.cpp
         stringparse.cpp
         stringparse.h
+        Cliente.h
+        Cliente.cpp
+        json.hpp
 )
 
 target_link_libraries(C_IDE Qt5::Core)

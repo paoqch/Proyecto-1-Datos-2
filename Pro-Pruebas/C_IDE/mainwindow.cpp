@@ -4,7 +4,6 @@
 #include "logger.h"
 #include <string>
 #include <fstream>
-#include "client.h"
 #include "QJsonObject"
 #include "QJsonDocument"
 #include <stdio.h>
@@ -26,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     setWindowTitle("C! - IDE");
     ui->Application_Log->setDocumentTitle("Output");
     ui->Application_Log->setReadOnly(true);
-    createClient();
+
 }
 
 MainWindow::~MainWindow(){
@@ -46,29 +45,6 @@ void MainWindow::on_RunButton_clicked(){
     convertidor->SplitString(instruccions, '#', line);
 
 
-    QJsonObject objeto = parser.parse(line);
-    QJsonDocument doc(objeto);
-    QByteArray bytes = doc.toJson();
-    const char* charString = bytes.data();
-    string someString(charString);
-    sendData(someString);
-
-    if(cliente->jsonActual.isEmpty()){
-        ui->RAM_view->rowCount();
-    }else {
-        //ui->RunButton->click();
-        //addOutputArea();
-        ui->RAM_view->insertRow(ui->RAM_view->rowCount());
-        int fila = ui->RAM_view->rowCount() -1;
-
-        addMemoryDirection(fila,cliente->jsonActual.value("Address").toString());
-        addValor(fila,cliente->jsonActual.value("Value").toString());
-        addEtiqueta(fila,cliente->jsonActual.value("Label").toString());
-        addReferencia(fila);
-
-        QString linea = QString("");
-        addOutputArea();
-    }
 }
 
 /**
@@ -128,13 +104,6 @@ void MainWindow::addReferencia(int fila){
     ui->RAM_view->setItem(fila,Referencias,new QTableWidgetItem("1"));
 }
 
-//Instancia la clase Client
-void MainWindow::createClient(){
-    Client* client = new Client(0,"127.0.0.1",8888);
-    cliente = client;
-     ui->Application_Log->appendPlainText(l1->logMessage(0,"Estableciendo conexion con el servidor..."));
-}
-
 /**
  * @brief MainWindow::on_pushButton_clicked
  * Metodo para reiniciar la ejecucion
@@ -150,15 +119,6 @@ void MainWindow::on_pushButton_clicked(){
 void MainWindow::on_stop_clicked(){
     stop_stop = false;
     ui->Application_Log->appendPlainText(l1->logMessage(1,"Se detuvo la ejecucion"));
-}
-
-/**
- * @brief MainWindow::sendData
- * @param data
- * Envia una data en JSON al servidor
- */
-void MainWindow::sendData(string data){
-    cliente->SendData(QString(data.c_str()));
 }
 
 /**
@@ -230,6 +190,7 @@ void MainWindow::on_Next_clicked(){
         }else if(line[0] == "cout"){
 
             valorEnviar = convertidor->GenerarCout(line);
+
 
         }
 

@@ -22,98 +22,6 @@
 using namespace std;
 using std::string;
 
-/**
- * @brief StringParse::StringParse
- */
-StringParse::StringParse()
-{
-    i = 0;
-}
-/**
- * @brief StringParse::parse
- * @param line
- * @return
- * Mete la informacion recibida y enviada a un area de texto
- */
-QJsonObject StringParse::parse(vector<string> line){
-    if(i >= line.size()){
-        QJsonObject termino = makeJson("Finish", "Finish", "Finish");
-        return termino;
-    }
-
- }
-
-QJsonObject StringParse::writeFile(vector <string> line){
-
-    QJsonObject objeto = getType(line);
-    return objeto;
-}
-
-void StringParse::readFile(){
-
-}
-
-/**
- * @brief StringParse::makeJson
- * @param tip
- * @param val
- * @param var
- * @return
- */
-QJsonObject StringParse::makeJson(string tip, string val, string var){
-    QJsonObject object
-        {
-            {"Type","NI"},
-            {"Value","NI"},
-            {"Variable","NI"}
-        };
-
-        QVariant tipo(QString::fromStdString(tip));
-        QVariant valor(QString::fromStdString(val));
-        QVariant variable(QString::fromStdString(var));
-
-        object.insert("Type",tipo.toJsonValue());
-        object.insert("Value",valor.toJsonValue());
-        object.insert("Variable",variable.toJsonValue());
-        return object;
-}
-
-/**
- * @brief StringParse::getType
- * @param line
- * @return
- * Identifica el tipo de variable y lo pasa a un Json
- */
-QJsonObject StringParse::getType(vector<string> line){
-    do{
-        if(line[0] == "int"){
-                string variable  = getVariable(line);
-                string valor = getValor(line);
-                QJsonObject  objeto = makeJson("int",valor,variable);
-                return objeto;
-                continue;
-        }
-        else if(line[0]=="float"){
-                string variable  = getVariable(line);
-                string valor = getValor(line);
-                QJsonObject  objeto = makeJson("float",valor,variable);
-                return objeto;
-                continue;
-        }
-        else if(line[0]=="double"){
-                string variable  = getVariable(line);
-                string valor = getValor(line);
-                QJsonObject  objeto = makeJson("double",valor,variable);
-                return objeto;
-                continue;
-            }
-        }
-        while(i <= line.size());
-    QJsonObject  objetof = makeJson("Finish","Finish","Finish");
-    return objetof;
-
-}
-
 
 /// Función split para separar el stiring y generar el vector de string
 /// \param texto string que se quiere parsea
@@ -276,11 +184,9 @@ string StringParse::GenerarInt(vector<string> line) {
 
     string mensaje;
 
-    if (line[line.size()-1].find(';') != -1){
+    if (line[line.size()-1].find(';') != -1 && line.size() >= 4){
         VerificarPuntoyComa(line);
-    } else if (line.size() >= 4) {
-        return "error";
-    }else {
+    } else {
         return "error";
     }
 
@@ -358,11 +264,9 @@ string StringParse::GenerarChar(vector<string> line) {
 
     string mensaje;
 
-    if (line[line.size()-1].find(';') != -1){
+    if (line[line.size()-1].find(';') != -1 && line.size() >= 4){
         VerificarPuntoyComa(line);
-    } else if (line.size() >= 4) {
-        return "error";
-    }else {
+    } else {
         return "error";
     }
 
@@ -380,7 +284,7 @@ string StringParse::GenerarDouble(vector<string> line) {
 
     string mensaje;
 
-    if (line[line.size()-1].find(';') != -1){
+    if (line[line.size()-1].find(';') != -1 && line.size() >= 4){
         VerificarPuntoyComa(line);
     } else {
         return "error";
@@ -459,11 +363,9 @@ string StringParse::GenerarLong(vector<string> line) {
 
     string mensaje;
 
-    if (line[line.size()-1].find(';') != -1){
+    if (line[line.size()-1].find(';') != -1 && line.size() >= 4){
         VerificarPuntoyComa(line);
-    } else if (line.size() >= 4) {
-        return "error";
-    }else {
+    } else {
         return "error";
     }
     if(VerificarEspacios(line)){
@@ -539,11 +441,9 @@ string StringParse::GenerarFloat(vector<string> line) {
 
     string mensaje;
 
-    if (line[line.size()-1].find(';') != -1){
+    if (line[line.size()-1].find(';') != -1 && line.size() >= 4){
         VerificarPuntoyComa(line);
-    } else if (line.size() >= 4) {
-        return "error";
-    }else {
+    } else {
         return "error";
     }
 
@@ -621,11 +521,9 @@ string StringParse::GenerarCout(vector<string> line) {
 
     string mensaje;
 
-    if (line[line.size()-1].find(';') != -1){
+    if (line[line.size()-1].find(';') != -1 && line.size() >= 3){
         VerificarPuntoyComa(line);
-    } else if (line.size() >= 3) {
-        return "error";
-    }else {
+    } else {
         return "error";
     }
 
@@ -651,106 +549,25 @@ string StringParse::GenerarReference(vector<string> line) {
 
     string mensaje;
 
-    if (line[line.size()-1].find(';') != -1){
+    if (line[line.size()-1].find(';') != -1 && line.size() >= 4){
         VerificarPuntoyComa(line);
-    } else if (line.size() > 4) {
-        return "error";
-    }else {
+    } else {
         return "error";
     }
+
+    if(line[3] == "&"){
+        string dataType = line[1].substr(1,line[1].size()-2);
+        string name = line[2];
+        //string valor = PedirValor(line[3]);
+
+    } else {
+        return "error";
+    }
+
+
 
 
     return "error";
 }
 
-/**
- * @brief StringParse::getVariable
- * @param line
- * @return
- * Retorna el nombre de las variable
- */
-string StringParse::getVariable(vector<string> line) {
 
-    string nombreVariable;
-    string tipoVariable;
-
-    if (line[line.size()-1].find(';') != -1){
-        VerificarPuntoyComa(line);
-    } else if (line.size() >= 4) {
-        return "error";
-    }else {
-        return "error";
-    }
-
-    if(VerificarEspacios(line)){
-
-        int valor = 0;
-        string valor1;
-
-        valor1 = ObtenerNumero(line.at(3));
-
-        if (valor1 != "error"){
-            valor += stoi(valor1);
-        } else{
-            return "error";
-        }
-
-        tipoVariable = "Type " + line[0] + "\n";
-        cout << "Type " + line[0] + "\n";
-        nombreVariable = line[1];
-        cout << "Nombre " + line[1] + "\n";
-        return nombreVariable;
-    }
-}
-
-/**
- * @brief StringParse::getValor
- * @param line
- * @return
- * Retorna el valor de la variable
- */
-string StringParse::getValor(vector<string> line) {
-
-    string valorVariable;
-
-    if (line[line.size()-1].find(';') != -1){
-        VerificarPuntoyComa(line);
-    } else if (line.size() >= 4) {
-        return "error";
-    }else {
-        return "error";
-    }
-
-    if(VerificarEspacios(line)){
-
-        int valor = 0;
-        string valor1;
-
-        valor1 = ObtenerNumero(line.at(3));
-
-        if (valor1 != "error"){
-            valor += stoi(valor1);
-        } else{
-            return "error";
-        }
-
-        valorVariable = to_string(valor);
-        cout << "Valor " + to_string(valor)+ "\n";
-        return valorVariable;
-    }
-}
-
-/**
- * @brief StringParse::getValorChar
- * @param line
- * @return
- * Mete la informacion recibida y enviada a un area de texto
- */
-string StringParse::getValorChar(vector<string> line) {
-
-    string valorVariable;
-
-    valorVariable = line[3];
-    cout << "Nombre " + line[3] + "\n";
-    return valorVariable;
-}

@@ -4,7 +4,6 @@
 #include <QtCore/qglobal.h>
 #if QT_VERSION >= 0x050000
 #include <QMainWindow>
-#include "client.h"
 #include <string>
 
 #else
@@ -31,7 +30,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    Client *cliente;
     int i = 0;
     StringParse parser;
     vector<string> linesCode;

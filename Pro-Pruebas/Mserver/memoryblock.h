@@ -2,7 +2,7 @@
 #define MEMORYBLOCK_H
 
 #include <QtCore/qglobal.h>
-#include "node.h";
+#include "node.h"
 #include <iostream>
 #include <sstream>
 #include <vector>
