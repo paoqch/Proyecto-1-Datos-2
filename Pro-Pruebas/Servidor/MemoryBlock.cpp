@@ -148,3 +148,7 @@ bool MemoryBlock::NotVerificar() {
 void MemoryBlock::Reset() {
     size = 0;
 }
+
+void MemoryBlock::Reserve(int memory) {
+    mem = (Node *) malloc(1024 * 1024 * memory);
+}

@@ -24,7 +24,7 @@ private:
     int finish;
     int iCollector;
 
-    Node *mem = (Node *) malloc(1024 * 1024 * 10);
+    Node *mem;
 
     vector<int> garbage;
     vector<int> notGarbage;
@@ -47,6 +47,7 @@ public:
     bool Verificar();
     bool NotVerificar();
     void Reset();
+    void Reserve(int memory);
 
 
 };

@@ -586,10 +586,18 @@ string StringParse::GenerarReference(vector<string> line) {
         return "error";
     }
 
-    if(line[3] == "&"){
+    if(line[4] == "&"){
         string dataType = line[1].substr(1,line[1].size()-2);
         string name = line[2];
-        //string valor = PedirValor(line[3]);
+        string valor = ObtenerNumero(line[5]);
+
+        json obj;
+
+        obj["type"] = dataType;
+        obj["name"] = name;
+        obj["value"] = valor;
+
+        return obj.dump(4);
 
     } else {
         return "error";
@@ -606,14 +614,15 @@ string StringParse::PedirDato(string nameData) {
     obj["name"] = nameData;
     obj["value"] = "notValue";
 
-    cout << "me llego esto  " << obj.dump(4);
-
     cliente->StartClient(obj.dump(4));
 
-    sleep(0.01);
+    sleep(0.09);
 
     string recibido = cliente->GetDato();
+    cout << "me llego esto  " << recibido;
     obj = json::parse(recibido);
+
+    sleep(0.09);
 
     return obj["data"].get<string>();
 
@@ -642,11 +651,24 @@ string StringParse::GenerarInicio() {
 }
 
 string StringParse::Reseteo() {
+
     json obj;
 
     obj["type"] = "reset";
     obj["name"] = "notValue";
     obj["value"] = "notValue";
+
+    return obj.dump(4);
+}
+
+string StringParse::Reserve(string memory) {
+
+    json obj;
+
+    obj["type"] = "reserve";
+    obj["name"] = "notValue";
+    obj["value"] = memory;
+
 
     return obj.dump(4);
 }

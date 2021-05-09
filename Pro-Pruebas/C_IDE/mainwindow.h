@@ -53,6 +53,8 @@ private slots:
     void reiniciarParseo();
 
 
+    void on_reverseButton_clicked();
+
 private:
    Ui::MainWindow *ui;
    enum Columna{

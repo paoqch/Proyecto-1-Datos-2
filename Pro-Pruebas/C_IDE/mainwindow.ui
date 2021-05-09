@@ -47,10 +47,10 @@
    <widget class="QTableWidget" name="RAM_view">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>570</x>
       <y>50</y>
       <width>401</width>
-      <height>251</height>
+      <height>441</height>
      </rect>
     </property>
     <column>
@@ -77,7 +77,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>570</x>
       <y>20</y>
       <width>111</width>
       <height>17</height>
@@ -177,7 +177,7 @@
     <property name="geometry">
      <rect>
       <x>570</x>
-      <y>330</y>
+      <y>520</y>
       <width>101</width>
       <height>17</height>
      </rect>
@@ -223,6 +223,52 @@
     </property>
     <property name="text">
      <string>Next</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="editLine">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>510</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="editReserve">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>510</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>520</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MB</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reverseButton">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>510</y>
+      <width>89</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reserve</string>
     </property>
    </widget>
   </widget>

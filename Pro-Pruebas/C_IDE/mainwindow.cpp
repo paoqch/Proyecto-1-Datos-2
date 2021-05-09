@@ -79,6 +79,8 @@ void MainWindow::addRamView(){
 
     string recibido = cliente->GetDato();
 
+    ui->Application_Log->appendPlainText(l1->logMessage(0,"Recibiendo sobre la Ram View"));
+
     obj = json::parse(recibido);
 
     int size = obj["size"].get<int>();
@@ -123,6 +125,8 @@ void MainWindow::on_stop_clicked(){
     ui->Application_Log->appendPlainText(l1->logMessage(1,"Se detuvo la ejecucion"));
     i = 0;
     linesCode.clear();
+    ui->editLine->clear();
+    ui->RAM_view->clear();
     cliente->StartClient(convertidor->Reseteo());
 }
 
@@ -133,6 +137,9 @@ void MainWindow::on_stop_clicked(){
 void MainWindow::on_clear_clicked(){
     ui->Application_Log->clear();
     ui->Stdout->clear();
+    ui->editLine->clear();
+    ui->RAM_view->clear();
+    ui->Application_Log->appendPlainText(l1->logMessage(0,"Eliminar información del log"));
 }
 
 /**
@@ -200,8 +207,8 @@ void MainWindow::on_Next_clicked(){
         }
 
         if(valorEnviar == "error"){
-            cout << "ERROR DE SINTAXIS EN LA LINEA " << endl;
-            cout << i;
+            ui->Application_Log->appendPlainText(l1->logMessage(2,"Error de sintaxis"));
+
         } else if (valorEnviar == "vacia"){
 
         } else if(line[0] == "cout"){
@@ -211,11 +218,22 @@ void MainWindow::on_Next_clicked(){
 
         } else {
             cliente->StartClient(valorEnviar);
+            ui->Application_Log->appendPlainText(l1->logMessage(0,"Enviando información"));
             line.clear();
             i++;
+            ui->editLine->clear();
+            ui->editLine->appendPlainText(QString::number(i));
             addRamView();
         }
 
 
     }
+}
+
+void MainWindow::on_reverseButton_clicked()
+{
+    string memoria = ui->editReserve->toPlainText().toStdString();
+    string memoriaEnviar = convertidor->Reserve(memoria);
+    ui->Application_Log->appendPlainText(l1->logMessage(0,"Reservando memoria"));
+    cliente->StartClient(memoriaEnviar);
 }

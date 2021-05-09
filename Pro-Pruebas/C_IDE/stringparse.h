@@ -43,6 +43,7 @@ public:
     string GenerarInicio();
     string GenerarFinal();
     string Reseteo();
+    string Reserve(string memory);
 
 
 };

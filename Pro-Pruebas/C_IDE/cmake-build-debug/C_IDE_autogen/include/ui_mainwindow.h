@@ -42,6 +42,10 @@ public:
     QLabel *label_Analyzed_Line;
     QPushButton *pushButton;
     QPushButton *Next;
+    QPlainTextEdit *editLine;
+    QPlainTextEdit *editReserve;
+    QLabel *label_5;
+    QPushButton *reverseButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -74,10 +78,10 @@ public:
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         RAM_view->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         RAM_view->setObjectName(QString::fromUtf8("RAM_view"));
-        RAM_view->setGeometry(QRect(550, 50, 401, 251));
+        RAM_view->setGeometry(QRect(570, 50, 401, 441));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(560, 20, 111, 17));
+        label->setGeometry(QRect(570, 20, 111, 17));
         Stdout = new QPlainTextEdit(centralwidget);
         Stdout->setObjectName(QString::fromUtf8("Stdout"));
         Stdout->setGeometry(QRect(20, 330, 531, 81));
@@ -106,7 +110,7 @@ public:
         stop->setIcon(icon2);
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(570, 330, 101, 17));
+        label_4->setGeometry(QRect(570, 520, 101, 17));
         label_Analyzed_Line = new QLabel(centralwidget);
         label_Analyzed_Line->setObjectName(QString::fromUtf8("label_Analyzed_Line"));
         label_Analyzed_Line->setGeometry(QRect(680, 330, 67, 17));
@@ -116,6 +120,18 @@ public:
         Next = new QPushButton(centralwidget);
         Next->setObjectName(QString::fromUtf8("Next"));
         Next->setGeometry(QRect(320, 10, 89, 25));
+        editLine = new QPlainTextEdit(centralwidget);
+        editLine->setObjectName(QString::fromUtf8("editLine"));
+        editLine->setGeometry(QRect(670, 510, 41, 31));
+        editReserve = new QPlainTextEdit(centralwidget);
+        editReserve->setObjectName(QString::fromUtf8("editReserve"));
+        editReserve->setGeometry(QRect(740, 510, 91, 31));
+        label_5 = new QLabel(centralwidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(840, 520, 67, 17));
+        reverseButton = new QPushButton(centralwidget);
+        reverseButton->setObjectName(QString::fromUtf8("reverseButton"));
+        reverseButton->setGeometry(QRect(870, 510, 89, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -151,6 +167,8 @@ public:
         label_Analyzed_Line->setText(QString());
         pushButton->setText(QApplication::translate("MainWindow", "Reset", nullptr));
         Next->setText(QApplication::translate("MainWindow", "Next", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "MB", nullptr));
+        reverseButton->setText(QApplication::translate("MainWindow", "Reserve", nullptr));
     } // retranslateUi
 
 };

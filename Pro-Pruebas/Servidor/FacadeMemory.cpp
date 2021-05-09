@@ -27,7 +27,7 @@ void FacadeMemory::Action(string type, string name, string data) {
         GetAllsValues();
     }else if (type == "data"){
         GetData(name);
-        GetAllsValues();
+
     }else if (type == "garbage"){
         CallGarbajeCollector();
     }else if (type == "{"){
@@ -38,6 +38,8 @@ void FacadeMemory::Action(string type, string name, string data) {
         GetAllsValues();
     }else if (type == "reset"){
         memBlock->Reset();
+    } else if(type == "reserve"){
+        memBlock->Reserve(stoi(data));
     }
 
 }
