@@ -33,7 +33,6 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
     int i = 0;
-    StringParse parser;
     vector<string> linesCode;
     StringParse *convertidor = new StringParse();
     Cliente *cliente = new Cliente();

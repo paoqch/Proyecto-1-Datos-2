@@ -42,6 +42,7 @@ public:
     string PedirDato(string nameData);
     string GenerarInicio();
     string GenerarFinal();
+    string Reseteo();
 
 
 };

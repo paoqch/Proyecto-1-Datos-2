@@ -46,6 +46,8 @@ public:
     bool RefactorCollectorAux();
     bool Verificar();
     bool NotVerificar();
+    void Reset();
+
 
 };
 

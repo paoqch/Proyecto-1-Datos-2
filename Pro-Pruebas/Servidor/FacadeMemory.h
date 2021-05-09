@@ -36,7 +36,6 @@ public:
     void EndBlock();
     void CallGarbajeCollector();
     void GetData(string name);
-    void GetValues(string name);
     string GenerateString();
     void GetAllsValues();
 

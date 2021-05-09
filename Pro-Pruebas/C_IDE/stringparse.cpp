@@ -641,3 +641,12 @@ string StringParse::GenerarInicio() {
     return obj.dump(4);
 }
 
+string StringParse::Reseteo() {
+    json obj;
+
+    obj["type"] = "reset";
+    obj["name"] = "notValue";
+    obj["value"] = "notValue";
+
+    return obj.dump(4);
+}

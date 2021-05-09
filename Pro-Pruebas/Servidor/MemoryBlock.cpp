@@ -144,3 +144,7 @@ bool MemoryBlock::NotVerificar() {
         return false;
     }
 }
+
+void MemoryBlock::Reset() {
+    size = 0;
+}

@@ -63,10 +63,10 @@ RM = /home/richmond/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7717.62/b
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/richmond/Desktop/Prueba server/Servidor"
+CMAKE_SOURCE_DIR = "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Servidor.dir/depend.make
@@ -79,68 +79,68 @@ include CMakeFiles/Servidor.dir/flags.make
 
 CMakeFiles/Servidor.dir/main.cpp.o: CMakeFiles/Servidor.dir/flags.make
 CMakeFiles/Servidor.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Servidor.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/main.cpp.o -c "/home/richmond/Desktop/Prueba server/Servidor/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Servidor.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/main.cpp.o -c "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/main.cpp"
 
 CMakeFiles/Servidor.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Servidor.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Prueba server/Servidor/main.cpp" > CMakeFiles/Servidor.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/main.cpp" > CMakeFiles/Servidor.dir/main.cpp.i
 
 CMakeFiles/Servidor.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Servidor.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Prueba server/Servidor/main.cpp" -o CMakeFiles/Servidor.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/main.cpp" -o CMakeFiles/Servidor.dir/main.cpp.s
 
 CMakeFiles/Servidor.dir/Servidor.cpp.o: CMakeFiles/Servidor.dir/flags.make
 CMakeFiles/Servidor.dir/Servidor.cpp.o: ../Servidor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Servidor.dir/Servidor.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/Servidor.cpp.o -c "/home/richmond/Desktop/Prueba server/Servidor/Servidor.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Servidor.dir/Servidor.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/Servidor.cpp.o -c "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.cpp"
 
 CMakeFiles/Servidor.dir/Servidor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Servidor.dir/Servidor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Prueba server/Servidor/Servidor.cpp" > CMakeFiles/Servidor.dir/Servidor.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.cpp" > CMakeFiles/Servidor.dir/Servidor.cpp.i
 
 CMakeFiles/Servidor.dir/Servidor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Servidor.dir/Servidor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Prueba server/Servidor/Servidor.cpp" -o CMakeFiles/Servidor.dir/Servidor.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.cpp" -o CMakeFiles/Servidor.dir/Servidor.cpp.s
 
 CMakeFiles/Servidor.dir/FacadeMemory.cpp.o: CMakeFiles/Servidor.dir/flags.make
 CMakeFiles/Servidor.dir/FacadeMemory.cpp.o: ../FacadeMemory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Servidor.dir/FacadeMemory.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/FacadeMemory.cpp.o -c "/home/richmond/Desktop/Prueba server/Servidor/FacadeMemory.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Servidor.dir/FacadeMemory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/FacadeMemory.cpp.o -c "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.cpp"
 
 CMakeFiles/Servidor.dir/FacadeMemory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Servidor.dir/FacadeMemory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Prueba server/Servidor/FacadeMemory.cpp" > CMakeFiles/Servidor.dir/FacadeMemory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.cpp" > CMakeFiles/Servidor.dir/FacadeMemory.cpp.i
 
 CMakeFiles/Servidor.dir/FacadeMemory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Servidor.dir/FacadeMemory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Prueba server/Servidor/FacadeMemory.cpp" -o CMakeFiles/Servidor.dir/FacadeMemory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.cpp" -o CMakeFiles/Servidor.dir/FacadeMemory.cpp.s
 
 CMakeFiles/Servidor.dir/MemoryBlock.cpp.o: CMakeFiles/Servidor.dir/flags.make
 CMakeFiles/Servidor.dir/MemoryBlock.cpp.o: ../MemoryBlock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Servidor.dir/MemoryBlock.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/MemoryBlock.cpp.o -c "/home/richmond/Desktop/Prueba server/Servidor/MemoryBlock.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Servidor.dir/MemoryBlock.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/MemoryBlock.cpp.o -c "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.cpp"
 
 CMakeFiles/Servidor.dir/MemoryBlock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Servidor.dir/MemoryBlock.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Prueba server/Servidor/MemoryBlock.cpp" > CMakeFiles/Servidor.dir/MemoryBlock.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.cpp" > CMakeFiles/Servidor.dir/MemoryBlock.cpp.i
 
 CMakeFiles/Servidor.dir/MemoryBlock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Servidor.dir/MemoryBlock.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Prueba server/Servidor/MemoryBlock.cpp" -o CMakeFiles/Servidor.dir/MemoryBlock.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.cpp" -o CMakeFiles/Servidor.dir/MemoryBlock.cpp.s
 
 CMakeFiles/Servidor.dir/Node.cpp.o: CMakeFiles/Servidor.dir/flags.make
 CMakeFiles/Servidor.dir/Node.cpp.o: ../Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Servidor.dir/Node.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/Node.cpp.o -c "/home/richmond/Desktop/Prueba server/Servidor/Node.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Servidor.dir/Node.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Servidor.dir/Node.cpp.o -c "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.cpp"
 
 CMakeFiles/Servidor.dir/Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Servidor.dir/Node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Prueba server/Servidor/Node.cpp" > CMakeFiles/Servidor.dir/Node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.cpp" > CMakeFiles/Servidor.dir/Node.cpp.i
 
 CMakeFiles/Servidor.dir/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Servidor.dir/Node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Prueba server/Servidor/Node.cpp" -o CMakeFiles/Servidor.dir/Node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.cpp" -o CMakeFiles/Servidor.dir/Node.cpp.s
 
 # Object files for target Servidor
 Servidor_OBJECTS = \
@@ -160,7 +160,7 @@ Servidor: CMakeFiles/Servidor.dir/MemoryBlock.cpp.o
 Servidor: CMakeFiles/Servidor.dir/Node.cpp.o
 Servidor: CMakeFiles/Servidor.dir/build.make
 Servidor: CMakeFiles/Servidor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Servidor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Servidor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Servidor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -173,6 +173,6 @@ CMakeFiles/Servidor.dir/clean:
 .PHONY : CMakeFiles/Servidor.dir/clean
 
 CMakeFiles/Servidor.dir/depend:
-	cd "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/richmond/Desktop/Prueba server/Servidor" "/home/richmond/Desktop/Prueba server/Servidor" "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug" "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug" "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Servidor.dir/depend
 

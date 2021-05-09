@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/richmond/Desktop/Prueba server/Servidor/FacadeMemory.cpp" "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/FacadeMemory.cpp.o"
-  "/home/richmond/Desktop/Prueba server/Servidor/MemoryBlock.cpp" "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/MemoryBlock.cpp.o"
-  "/home/richmond/Desktop/Prueba server/Servidor/Node.cpp" "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/Node.cpp.o"
-  "/home/richmond/Desktop/Prueba server/Servidor/Servidor.cpp" "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/Servidor.cpp.o"
-  "/home/richmond/Desktop/Prueba server/Servidor/main.cpp" "/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/main.cpp.o"
+  "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.cpp" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/FacadeMemory.cpp.o"
+  "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.cpp" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/MemoryBlock.cpp.o"
+  "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.cpp" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/Node.cpp.o"
+  "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.cpp" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/Servidor.cpp.o"
+  "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/main.cpp" "/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

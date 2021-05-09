@@ -120,8 +120,10 @@ void MainWindow::on_pushButton_clicked(){
  * Metodo para detener la ejecucion
  */
 void MainWindow::on_stop_clicked(){
-    stop_stop = false;
     ui->Application_Log->appendPlainText(l1->logMessage(1,"Se detuvo la ejecucion"));
+    i = 0;
+    linesCode.clear();
+    cliente->StartClient(convertidor->Reseteo());
 }
 
 /**
@@ -130,6 +132,7 @@ void MainWindow::on_stop_clicked(){
  */
 void MainWindow::on_clear_clicked(){
     ui->Application_Log->clear();
+    ui->Stdout->clear();
 }
 
 /**
@@ -138,6 +141,10 @@ void MainWindow::on_clear_clicked(){
  */
 void MainWindow::reiniciarParseo(){
     ui->Application_Log->appendPlainText(l1->logMessage(1,"Se reinicio el sistema..."));
+    ui->CodeTextArea->clear();
+    i = 0;
+    linesCode.clear();
+    cliente->StartClient(convertidor->Reseteo());
 }
 
 /**
@@ -186,11 +193,7 @@ void MainWindow::on_Next_clicked(){
 
             valorEnviar = convertidor->GenerarReference(line);
 
-        }else if(line[0] == "cout"){
-
-            valorEnviar = convertidor->GenerarCout(line);
-
-        } else if (line[0] == "") {
+        }else if (line[0] == "") {
 
             valorEnviar = "vacio";
 
@@ -200,6 +203,11 @@ void MainWindow::on_Next_clicked(){
             cout << "ERROR DE SINTAXIS EN LA LINEA " << endl;
             cout << i;
         } else if (valorEnviar == "vacia"){
+
+        } else if(line[0] == "cout"){
+
+            valorEnviar = convertidor->GenerarCout(line);
+            ui->Stdout->appendPlainText(QString::fromStdString(valorEnviar));
 
         } else {
             cliente->StartClient(valorEnviar);

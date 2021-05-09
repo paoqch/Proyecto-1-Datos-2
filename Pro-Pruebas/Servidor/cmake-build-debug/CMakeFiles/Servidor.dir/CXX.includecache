@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/richmond/Desktop/Prueba server/Servidor/FacadeMemory.cpp
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.cpp
 FacadeMemory.h
-/home/richmond/Desktop/Prueba server/Servidor/FacadeMemory.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.h
 
-/home/richmond/Desktop/Prueba server/Servidor/FacadeMemory.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.h
 MemoryBlock.h
-/home/richmond/Desktop/Prueba server/Servidor/MemoryBlock.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.h
 iostream
 -
 sstream
@@ -22,11 +22,15 @@ vector
 string
 -
 json.hpp
-/home/richmond/Desktop/Prueba server/Servidor/json.hpp
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/json.hpp
 
-/home/richmond/Desktop/Prueba server/Servidor/MemoryBlock.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.cpp
+MemoryBlock.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.h
+
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.h
 Node.h
-/home/richmond/Desktop/Prueba server/Servidor/Node.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.h
 iostream
 -
 sstream
@@ -38,11 +42,39 @@ iostream
 typeinfo
 -
 
-/home/richmond/Desktop/Prueba server/Servidor/Node.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.cpp
+Node.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.h
+
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.h
 iostream
 -
 
-/home/richmond/Desktop/Prueba server/Servidor/json.hpp
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.cpp
+Servidor.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.h
+
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.h
+iostream
+-
+sys/types.h
+-
+unistd.h
+-
+sys/socket.h
+-
+netdb.h
+-
+arpa/inet.h
+-
+string.h
+-
+string
+-
+FacadeMemory.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.h
+
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/json.hpp
 algorithm
 -
 cstddef
@@ -365,4 +397,12 @@ utility
 -
 vector
 -
+
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/main.cpp
+string
+-
+Servidor.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.h
+FacadeMemory.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.h
 

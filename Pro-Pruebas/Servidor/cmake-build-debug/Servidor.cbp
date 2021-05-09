@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug"/>
+				<Option working_dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug"/>
+				<Option working_dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug"/>
+				<Option working_dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Servidor">
-				<Option output="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/Servidor" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug"/>
+				<Option output="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Servidor" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 Servidor"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 Servidor"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Servidor/fast">
-				<Option output="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/Servidor" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug"/>
+				<Option output="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Servidor" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,44 +75,44 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 Servidor/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Prueba\ server/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 Servidor/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/richmond/Desktop/Proyecto\ Final/Pro-Prueba/Pro-Pruebas/Servidor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/FacadeMemory.cpp">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.cpp">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/FacadeMemory.h">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.h">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/MemoryBlock.cpp">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.cpp">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/MemoryBlock.h">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.h">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/Node.cpp">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.cpp">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/Node.h">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.h">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/Servidor.cpp">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.cpp">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/Servidor.h">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.h">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/json.hpp">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/json.hpp">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/main.cpp">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/main.cpp">
 			<Option target="Servidor"/>
 		</Unit>
-		<Unit filename="/home/richmond/Desktop/Prueba server/Servidor/CMakeLists.txt">
+		<Unit filename="/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

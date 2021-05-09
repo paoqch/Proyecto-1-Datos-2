@@ -36,6 +36,8 @@ void FacadeMemory::Action(string type, string name, string data) {
         EndBlock();
     }else if (type == "values"){
         GetAllsValues();
+    }else if (type == "reset"){
+        memBlock->Reset();
     }
 
 }
@@ -99,24 +101,7 @@ void FacadeMemory::StartBlock() {
 /// Finaliza bloque de memoria
 void FacadeMemory::EndBlock() {
     memBlock->Finish();
-    memBlock->DeleteBlockMemory();
-}
-
-/// Devuelve los valores de un nodo
-void FacadeMemory::GetValues(string name) {
-
-    vector<string> valuesStr = memBlock->GetValues(5);
-
-    json objData;
-
-    objData["getdata"] = "false";
-    objData["address"] = valuesStr[0];
-    objData["name"] = valuesStr[2];
-    objData["data"] = valuesStr[1];
-    objData["reference"] = valuesStr[3];
-
-    this->data = objData.dump(4);
-
+    memBlock->Refactor();
 }
 
 void FacadeMemory::ReceiveJson(string stringObj) {
