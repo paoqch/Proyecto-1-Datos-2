@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Servidor.dir/main.cpp.o CMakeFiles/Servidor.dir/Servidor.cpp.o CMakeFiles/Servidor.dir/FacadeMemory.cpp.o CMakeFiles/Servidor.dir/MemoryBlock.cpp.o CMakeFiles/Servidor.dir/Node.cpp.o  -o Servidor 

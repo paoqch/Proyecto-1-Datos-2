@@ -1,0 +1,4 @@
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/build-C_IDE-Desktop_Qt_6_0_3_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/build-C_IDE-Desktop_Qt_6_0_3_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/build-C_IDE-Desktop_Qt_6_0_3_GCC_64bit-Debug/CMakeFiles/C_IDE.dir
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/build-C_IDE-Desktop_Qt_6_0_3_GCC_64bit-Debug/CMakeFiles/C_IDE_autogen.dir

@@ -1,0 +1,3 @@
+/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/richmond/Desktop/Prueba server/Servidor/cmake-build-debug/CMakeFiles/Servidor.dir

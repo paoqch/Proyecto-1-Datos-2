@@ -1,0 +1,4 @@
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/cmake-build-debug/CMakeFiles/C_IDE.dir
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/cmake-build-debug/CMakeFiles/C_IDE_autogen.dir
