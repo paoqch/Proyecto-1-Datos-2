@@ -65,43 +65,46 @@ void MainWindow::addOutputArea(){
     ui->Application_Log->appendPlainText(l1->logMessage(0,"Enviando la informacion al servidor..."));
 }
 
-/**
- * @brief MainWindow::addMemoryDirection
- * @param fila
- * @param address
- * Añade una direccion de memoria address al RAM Live View
- */
-void MainWindow::addMemoryDirection(int fila, QString address){
-    ui->RAM_view->setItem(fila,Direccion,new QTableWidgetItem(address));
-}
-
-/**
- * @brief MainWindow::addValor
- * @param fila
- * @param value
- * Añade un valor value al RAM Live View
- */
-void MainWindow::addValor(int fila,QString value){
-    ui->RAM_view->setItem(fila,Valor,new QTableWidgetItem(value));
-}
-
-/**
- * @brief MainWindow::addEtiqueta
- * @param fila
- * @param label
- * Añade una etiqueta label al RAM Live View
- */
-void MainWindow::addEtiqueta(int fila,QString label){
-    ui->RAM_view->setItem(fila, Etiqueta,new QTableWidgetItem(label));
-}
 
 /**
  * @brief MainWindow::addReferencia
  * @param fila
  * Añade una cantidad de referencias al RAM Live View
  */
-void MainWindow::addReferencia(int fila){
-    ui->RAM_view->setItem(fila,Referencias,new QTableWidgetItem("1"));
+void MainWindow::addRamView(){
+
+    json obj;
+
+    sleep(0.1);
+
+    string recibido = cliente->GetDato();
+
+    obj = json::parse(recibido);
+
+    int size = obj["size"].get<int>();
+
+    ui->RAM_view->insertRow(ui->RAM_view->rowCount());
+
+    for (int j = 0; j < size; ++j) {
+
+        string address = obj[to_string(j)]["address"].get<string>();
+        string data = obj[to_string(j)]["data"].get<string>();
+        string name = obj[to_string(j)]["name"].get<string>();
+        string reference  = obj[to_string(j)]["reference"].get<string>();
+
+        QString qAddress = QString::fromStdString(address);
+        QString qData = QString::fromStdString(data);
+        QString qName = QString::fromStdString(name);
+        QString qReference = QString::fromStdString(reference);
+
+        ui->RAM_view->setItem(j, 0, new QTableWidgetItem(qAddress));
+        ui->RAM_view->setItem(j, 1, new QTableWidgetItem(qData));
+        ui->RAM_view->setItem(j, 2, new QTableWidgetItem(qName));
+        ui->RAM_view->setItem(j, 3, new QTableWidgetItem(qReference));
+
+
+    }
+
 }
 
 /**
@@ -141,7 +144,9 @@ void MainWindow::reiniciarParseo(){
  * @brief MainWindow::on_Next_clicked
  */
 void MainWindow::on_Next_clicked(){
+
     if (i < linesCode.size()){
+
         string instruccions = convertidor->EliminarEspacios( linesCode[i]);
         vector<string> line;
 
@@ -152,55 +157,56 @@ void MainWindow::on_Next_clicked(){
         if(line[0] == "int"){
 
             valorEnviar = convertidor->GenerarInt(line);
-            cout << valorEnviar;
 
         }else if (line[0] == "char"){
 
             valorEnviar = convertidor->GenerarChar(line);
-            cout << valorEnviar;
 
         }else if (line[0] == "long"){
 
             valorEnviar = convertidor->GenerarLong(line);
-            cout << valorEnviar;
 
         }else if (line[0] == "double"){
 
             valorEnviar = convertidor->GenerarDouble(line);
-            cout << valorEnviar;
 
         }else if (line[0] == "float"){
 
             valorEnviar = convertidor->GenerarFloat(line);
-            cout << valorEnviar;
 
         }else if (line[0] == "{"){
 
-            valorEnviar = "Generate";
+            valorEnviar = convertidor->GenerarInicio();
 
         }else if(line[0] == "}"){
 
-            valorEnviar = "Eliminar";
+            valorEnviar = convertidor->GenerarFinal();
 
         }else if (line[0] == "reference"){
 
             valorEnviar = convertidor->GenerarReference(line);
-            cout << valorEnviar;
 
         }else if(line[0] == "cout"){
 
             valorEnviar = convertidor->GenerarCout(line);
 
+        } else if (line[0] == "") {
+
+            valorEnviar = "vacio";
 
         }
 
         if(valorEnviar == "error"){
-            //EJECUTAR ERROR
-        }
+            cout << "ERROR DE SINTAXIS EN LA LINEA " << endl;
+            cout << i;
+        } else if (valorEnviar == "vacia"){
 
-        cout << valorEnviar;
-        line.clear();
-        i++;
+        } else {
+            cliente->StartClient(valorEnviar);
+            line.clear();
+            i++;
+            addRamView();
+        }
 
 
     }

@@ -134,7 +134,7 @@ string StringParse::ObtenerNumero(string name) {
     if (accion == 1){
         return name;
     } else if (accion == 2){
-        //RecogerValor
+        return PedirDato(name);
     } else{
         return "error";
     }
@@ -169,11 +169,11 @@ int StringParse::VerificarCout(string instruccion) {
 
     }
 
-    if(numeros == 0 && letras == 0){
+    if(numeros != 0 && letras != 0){
         return 0;
-    } else if (comillas == 2){
+    } else if (comillas == 2 && letras == 1 || comillas == 2 && numeros >= 2){
         return 1;
-    } else if (numeros == 0 && letras != 0){
+    } else if (numeros == 0 && letras >= 1 && comillas == 0){
         return 2;
     }
 }
@@ -249,9 +249,13 @@ string StringParse::GenerarInt(vector<string> line) {
 
         }
 
+        json obj;
 
-        mensaje = line[0] + "-" + line[1] + "-" + to_string(valor);
-        return mensaje;
+        obj["type"] = line[0];
+        obj["name"] = line[1];
+        obj["value"] = to_string(valor);
+
+        return obj.dump(4);
 
     }
 
@@ -271,8 +275,13 @@ string StringParse::GenerarChar(vector<string> line) {
     }
 
     if(VerificarEspacios(line)){
-        string enviarMensaje = line[0] + "-" + line[1] + "-" + line[3];
-        return enviarMensaje;
+        json obj;
+
+        obj["type"] = line[0];
+        obj["name"] = line[1];
+        obj["value"] = line[3];
+
+        return obj.dump(4);
     }
 
     return "error";
@@ -291,13 +300,18 @@ string StringParse::GenerarDouble(vector<string> line) {
     }
 
     if(VerificarEspacios(line)){
-        double valor = 0;
+        double valor;
         string valor1;
 
         valor1 = ObtenerNumero(line.at(3));
 
+        cout << "este es con qstring " << valor << endl;
+
         if (valor1 != "error"){
-            valor += stod(valor1);
+
+            QString prueba = QString::fromStdString(valor1);
+            valor = prueba.toDouble();
+
         } else if (line.size() >= 4) {
             return "error";
         }else {
@@ -351,8 +365,13 @@ string StringParse::GenerarDouble(vector<string> line) {
         }
 
 
-        mensaje = line[0] + "-" + line[1] + "-" + to_string(valor);
-        return mensaje;
+        json obj;
+
+        obj["type"] = line[0];
+        obj["name"] = line[1];
+        obj["value"] = to_string(valor);
+
+        return obj.dump(4);
     }
     return "error";
 }
@@ -427,9 +446,13 @@ string StringParse::GenerarLong(vector<string> line) {
 
         }
 
+        json obj;
 
-        mensaje = line[0] + "-" + line[1] + "-" + to_string(valor);
-        return mensaje;
+        obj["type"] = line[0];
+        obj["name"] = line[1];
+        obj["value"] = to_string(valor);
+
+        return obj.dump(4);
     }
 
     return "error";
@@ -455,7 +478,8 @@ string StringParse::GenerarFloat(vector<string> line) {
         valor1 = ObtenerNumero(line.at(3));
 
         if (valor1 != "error"){
-            valor += stof(valor1);
+            QString prueba = QString::fromStdString(valor1);
+            valor = prueba.toFloat();
         } else{
             return "error";
         }
@@ -507,8 +531,13 @@ string StringParse::GenerarFloat(vector<string> line) {
         }
 
 
-        mensaje = line[0] + "-" + line[1] + "-" + to_string(valor);
-        return mensaje;
+        json obj;
+
+        obj["type"] = line[0];
+        obj["name"] = line[1];
+        obj["value"] = to_string(valor);
+
+        return obj.dump(4);
     }
 
     return "error";
@@ -533,10 +562,12 @@ string StringParse::GenerarCout(vector<string> line) {
         return "error";
     } else if (opcion == 1){
         string imprimir = line[2];
-        imprimir = imprimir.substr(2,imprimir.length()-2);
+        imprimir = imprimir.substr(1,imprimir.length()-2);
         return imprimir;
-    } else{
-        //pedir valor
+    } else if (opcion == 2){
+        string imprimir = line[2];
+        imprimir = imprimir.substr(1,imprimir.length()-2);
+        return ObtenerNumero(imprimir);
     }
 
     return "error";
@@ -564,10 +595,49 @@ string StringParse::GenerarReference(vector<string> line) {
         return "error";
     }
 
-
-
-
     return "error";
 }
 
+string StringParse::PedirDato(string nameData) {
+
+    json obj;
+
+    obj["type"] = "data";
+    obj["name"] = nameData;
+    obj["value"] = "notValue";
+
+    cout << "me llego esto  " << obj.dump(4);
+
+    cliente->StartClient(obj.dump(4));
+
+    sleep(0.01);
+
+    string recibido = cliente->GetDato();
+    obj = json::parse(recibido);
+
+    return obj["data"].get<string>();
+
+}
+
+string StringParse::GenerarFinal() {
+
+    json obj;
+
+    obj["type"] = "}";
+    obj["name"] = "notValue";
+    obj["value"] = "notValue";
+
+    return obj.dump(4);
+}
+
+string StringParse::GenerarInicio() {
+
+    json obj;
+
+    obj["type"] = "{";
+    obj["name"] = "notValue";
+    obj["value"] = "notValue";
+
+    return obj.dump(4);
+}
 

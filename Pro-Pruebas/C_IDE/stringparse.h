@@ -2,7 +2,8 @@
 #define STRINGPARSE_H
 
 #include <QtCore/qglobal.h>
-
+#include "Cliente.h"
+#include "json.hpp"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -21,6 +22,7 @@ class StringParse
 {
 public:
 
+    Cliente *cliente = new Cliente();
     vector<string> linesCode;
 
     void SplitString(const string& texto, char del, vector<string>& v);
@@ -37,6 +39,9 @@ public:
     string GenerarCout(vector <string> line);
     string ObtenerNumero(string name);
     void VerificarPuntoyComa(vector<string>& line);
+    string PedirDato(string nameData);
+    string GenerarInicio();
+    string GenerarFinal();
 
 
 };

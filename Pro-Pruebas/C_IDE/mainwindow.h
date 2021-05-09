@@ -5,6 +5,8 @@
 #if QT_VERSION >= 0x050000
 #include <QMainWindow>
 #include <string>
+#include "Cliente.h"
+#include "json.hpp"
 
 #else
 #include <QtGui/QMainWindow>
@@ -34,6 +36,7 @@ public:
     StringParse parser;
     vector<string> linesCode;
     StringParse *convertidor = new StringParse();
+    Cliente *cliente = new Cliente();
 
 private slots:
     // acciones de botones
@@ -45,16 +48,9 @@ private slots:
 
     void addOutputArea();
     void addStdOutArea(QString linea);
-
-    // agregar datos a la tabla
-    void addMemoryDirection(int fila, QString address);
-    void addValor(int fila, QString value);
-    void addEtiqueta(int fila, QString label);
-    void addReferencia(int fila);
+    void addRamView();
 
 
-    void createClient();
-    void sendData(string data);
     void reiniciarParseo();
 
 
