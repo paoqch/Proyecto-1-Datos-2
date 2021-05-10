@@ -25,6 +25,7 @@ string MemoryBlock::GetData(string name) {
             return mem[i].GetData();
         }
     }
+    return "error";
 }
 
 vector<string> MemoryBlock::GetValues(int id) {
@@ -150,5 +151,8 @@ void MemoryBlock::Reset() {
 }
 
 void MemoryBlock::Reserve(int memory) {
-    mem = (Node *) malloc(1024 * 1024 * memory);
+    if(this->really){
+        mem = (Node *) malloc(1024 * 1024 * memory);
+        this->really = false;
+    }
 }

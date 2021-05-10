@@ -23,6 +23,7 @@ private:
     int start;
     int finish;
     int iCollector;
+    bool really = true;
 
     Node *mem;
 

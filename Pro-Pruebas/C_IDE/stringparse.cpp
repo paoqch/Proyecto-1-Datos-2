@@ -200,7 +200,7 @@ string StringParse::GenerarInt(vector<string> line) {
         if (valor1 != "error"){
             valor += stoi(valor1);
         } else{
-            return "error";
+            return "ErrorDato";
         }
 
         for (int i = 4; i < line.size()-1; ++i) {
@@ -212,7 +212,7 @@ string StringParse::GenerarInt(vector<string> line) {
                 if (valor1 != "error"){
                     valor += stoi(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "-"){
@@ -222,7 +222,7 @@ string StringParse::GenerarInt(vector<string> line) {
                 if (valor1 != "error"){
                     valor -= stoi(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "*"){
@@ -232,7 +232,7 @@ string StringParse::GenerarInt(vector<string> line) {
                 if (valor1 != "error"){
                     valor *= stoi(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "/"){
@@ -242,7 +242,7 @@ string StringParse::GenerarInt(vector<string> line) {
                 if (valor1 != "error"){
                     valor /= stoi(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }
@@ -313,9 +313,9 @@ string StringParse::GenerarDouble(vector<string> line) {
             valor = prueba.toDouble();
 
         } else if (line.size() >= 4) {
-            return "error";
+            return "ErrorDato";
         }else {
-            return "error";
+            return "ErrorDato";
         }
 
         for (int i = 4; i < line.size()-1; ++i) {
@@ -327,7 +327,7 @@ string StringParse::GenerarDouble(vector<string> line) {
                 if (valor1 != "error"){
                     valor += stod(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "-"){
@@ -337,7 +337,7 @@ string StringParse::GenerarDouble(vector<string> line) {
                 if (valor1 != "error"){
                     valor -= stod(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "*"){
@@ -347,7 +347,7 @@ string StringParse::GenerarDouble(vector<string> line) {
                 if (valor1 != "error"){
                     valor *= stod(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "/"){
@@ -357,7 +357,7 @@ string StringParse::GenerarDouble(vector<string> line) {
                 if (valor1 != "error"){
                     valor /= stod(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }
@@ -397,7 +397,7 @@ string StringParse::GenerarLong(vector<string> line) {
         if (valor1 != "error"){
             valor += stol(valor1);
         } else{
-            return "error";
+            return "ErrorDato";
         }
 
         for (int i = 4; i < line.size()-1; ++i) {
@@ -409,7 +409,7 @@ string StringParse::GenerarLong(vector<string> line) {
                 if (valor1 != "error"){
                     valor += stol(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "-"){
@@ -419,7 +419,7 @@ string StringParse::GenerarLong(vector<string> line) {
                 if (valor1 != "error"){
                     valor -= stol(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "*"){
@@ -429,7 +429,7 @@ string StringParse::GenerarLong(vector<string> line) {
                 if (valor1 != "error"){
                     valor *= stol(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "/"){
@@ -439,7 +439,7 @@ string StringParse::GenerarLong(vector<string> line) {
                 if (valor1 != "error"){
                     valor /= stol(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }
@@ -481,7 +481,7 @@ string StringParse::GenerarFloat(vector<string> line) {
             QString prueba = QString::fromStdString(valor1);
             valor = prueba.toFloat();
         } else{
-            return "error";
+            return "ErrorDato";
         }
 
         for (int i = 4; i < line.size()-1; ++i) {
@@ -493,7 +493,7 @@ string StringParse::GenerarFloat(vector<string> line) {
                 if (valor1 != "error"){
                     valor += stof(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "-"){
@@ -503,7 +503,7 @@ string StringParse::GenerarFloat(vector<string> line) {
                 if (valor1 != "error"){
                     valor -= stof(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "*"){
@@ -513,7 +513,7 @@ string StringParse::GenerarFloat(vector<string> line) {
                 if (valor1 != "error"){
                     valor *= stof(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }else if(line.at(i) == "/"){
@@ -523,7 +523,7 @@ string StringParse::GenerarFloat(vector<string> line) {
                 if (valor1 != "error"){
                     valor /= stof(valor1);
                 } else{
-                    return "error";
+                    return "ErrorDato";
                 }
 
             }
@@ -566,7 +566,6 @@ string StringParse::GenerarCout(vector<string> line) {
         return imprimir;
     } else if (opcion == 2){
         string imprimir = line[2];
-        imprimir = imprimir.substr(1,imprimir.length()-2);
         return ObtenerNumero(imprimir);
     }
 
@@ -624,6 +623,8 @@ string StringParse::PedirDato(string nameData) {
 
     sleep(0.09);
 
+    this->flag = true;
+
     return obj["data"].get<string>();
 
 }
@@ -668,6 +669,18 @@ string StringParse::Reserve(string memory) {
     obj["type"] = "reserve";
     obj["name"] = "notValue";
     obj["value"] = memory;
+
+
+    return obj.dump(4);
+}
+
+string StringParse::GarbageCollector(){
+
+    json obj;
+
+    obj["type"] = "garbage";
+    obj["name"] = "notValue";
+    obj["value"] = "notvalue";
 
 
     return obj.dump(4);

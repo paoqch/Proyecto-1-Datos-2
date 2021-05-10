@@ -27,13 +27,15 @@ void FacadeMemory::Action(string type, string name, string data) {
         GetAllsValues();
     }else if (type == "data"){
         GetData(name);
-
     }else if (type == "garbage"){
         CallGarbajeCollector();
+        GetAllsValues();
     }else if (type == "{"){
         StartBlock();
+        GetAllsValues();
     }else if (type == "}"){
         EndBlock();
+        GetAllsValues();
     }else if (type == "values"){
         GetAllsValues();
     }else if (type == "reset"){

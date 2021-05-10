@@ -24,6 +24,7 @@ public:
 
     Cliente *cliente = new Cliente();
     vector<string> linesCode;
+    bool flag;
 
     void SplitString(const string& texto, char del, vector<string>& v);
     string EliminarEspacios(string texto);
@@ -44,6 +45,7 @@ public:
     string GenerarFinal();
     string Reseteo();
     string Reserve(string memory);
+    string GarbageCollector();
 
 
 };

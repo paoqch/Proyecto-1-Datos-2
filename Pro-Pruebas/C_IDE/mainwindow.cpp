@@ -85,9 +85,12 @@ void MainWindow::addRamView(){
 
     int size = obj["size"].get<int>();
 
-    ui->RAM_view->insertRow(ui->RAM_view->rowCount());
+    ui->RAM_view->clear();
+    ui->RAM_view->setRowCount(0);
 
     for (int j = 0; j < size; ++j) {
+
+        ui->RAM_view->insertRow(ui->RAM_view->rowCount());
 
         string address = obj[to_string(j)]["address"].get<string>();
         string data = obj[to_string(j)]["data"].get<string>();
@@ -126,7 +129,6 @@ void MainWindow::on_stop_clicked(){
     i = 0;
     linesCode.clear();
     ui->editLine->clear();
-    ui->RAM_view->clear();
     cliente->StartClient(convertidor->Reseteo());
 }
 
@@ -159,7 +161,7 @@ void MainWindow::reiniciarParseo(){
  */
 void MainWindow::on_Next_clicked(){
 
-    if (i < linesCode.size()){
+    if (i < linesCode.size()-1){
 
         string instruccions = convertidor->EliminarEspacios( linesCode[i]);
         vector<string> line;
@@ -206,16 +208,24 @@ void MainWindow::on_Next_clicked(){
 
         }
 
+        if(convertidor->flag){
+            ui->Application_Log->appendPlainText(l1->logMessage(0,"Pidiendo dato"));
+            ui->Application_Log->appendPlainText(l1->logMessage(0,"Recibiendo dato"));
+            convertidor->flag = false;
+        }
+
         if(valorEnviar == "error"){
             ui->Application_Log->appendPlainText(l1->logMessage(2,"Error de sintaxis"));
-
+            on_stop_clicked();
+        } else if(valorEnviar == "ErrorDato"){
+            ui->Application_Log->appendPlainText(l1->logMessage(2,"El dato no existe"));
+            on_stop_clicked();
         } else if (valorEnviar == "vacia"){
 
         } else if(line[0] == "cout"){
-
             valorEnviar = convertidor->GenerarCout(line);
             ui->Stdout->appendPlainText(QString::fromStdString(valorEnviar));
-
+            i++;
         } else {
             cliente->StartClient(valorEnviar);
             ui->Application_Log->appendPlainText(l1->logMessage(0,"Enviando información"));
@@ -226,7 +236,15 @@ void MainWindow::on_Next_clicked(){
             addRamView();
         }
 
+        if(i%100 == 0){
+            valorEnviar = convertidor->GarbageCollector();
+            cliente->StartClient(valorEnviar);
+            ui->Application_Log->appendPlainText(l1->logMessage(0,"Se realizó el garbage collector"));
+        }
 
+    } else{
+        ui->Application_Log->appendPlainText(l1->logMessage(1,"No hay ejeccución en proceso"));
+        on_stop_clicked();
     }
 }
 
