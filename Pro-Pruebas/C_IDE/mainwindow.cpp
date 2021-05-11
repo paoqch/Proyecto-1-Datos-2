@@ -37,12 +37,24 @@ MainWindow::~MainWindow(){
  * Ejecuta el codigo
  */
 void MainWindow::on_RunButton_clicked(){
-    string codigo = ui->CodeTextArea->toPlainText().toStdString() +'\n';
-    convertidor->SplitString(codigo, '\n', linesCode);
 
-    string instruccions = convertidor->EliminarEspacios( linesCode[i]);
-    vector<string> line;
-    convertidor->SplitString(instruccions, '#', line);
+    if(!this->reserves){
+
+        ui->Application_Log->appendPlainText(l1->logMessage(2,"Debe reservar la memoria primero"));
+
+    }else{
+
+        string codigo = ui->CodeTextArea->toPlainText().toStdString() +'\n';
+        convertidor->SplitString(codigo, '\n', linesCode);
+
+        string instruccions = convertidor->EliminarEspacios( linesCode[i]);
+        vector<string> line;
+        convertidor->SplitString(instruccions, '#', line);
+
+    }
+
+
+
 
 
 }
@@ -86,7 +98,9 @@ void MainWindow::addRamView(){
     int size = obj["size"].get<int>();
 
     ui->RAM_view->clear();
-    ui->RAM_view->setRowCount(0);
+
+    ui->RAM_view->setHorizontalHeaderLabels(this->l2);
+
 
     for (int j = 0; j < size; ++j) {
 
@@ -141,6 +155,7 @@ void MainWindow::on_clear_clicked(){
     ui->Stdout->clear();
     ui->editLine->clear();
     ui->RAM_view->clear();
+    ui->RAM_view->setHorizontalHeaderLabels(this->l2);
     ui->Application_Log->appendPlainText(l1->logMessage(0,"Eliminar información del log"));
 }
 
@@ -153,6 +168,7 @@ void MainWindow::reiniciarParseo(){
     ui->CodeTextArea->clear();
     i = 0;
     linesCode.clear();
+    ui->RAM_view->clear();
     cliente->StartClient(convertidor->Reseteo());
 }
 
@@ -165,40 +181,56 @@ void MainWindow::on_Next_clicked(){
 
         string instruccions = convertidor->EliminarEspacios( linesCode[i]);
         vector<string> line;
+        bool condicion = convertidor->structCommand;
 
         convertidor->SplitString(instruccions, '#', line);
 
         string valorEnviar;
 
-        if(line[0] == "int"){
+        if(line[0] == "int" && !condicion){
 
             valorEnviar = convertidor->GenerarInt(line);
 
-        }else if (line[0] == "char"){
+        }else if (line[0] == "char" && !condicion){
 
             valorEnviar = convertidor->GenerarChar(line);
 
-        }else if (line[0] == "long"){
+        }else if (line[0] == "long" && !condicion){
 
             valorEnviar = convertidor->GenerarLong(line);
 
-        }else if (line[0] == "double"){
+        }else if (line[0] == "double" && !condicion){
 
             valorEnviar = convertidor->GenerarDouble(line);
 
-        }else if (line[0] == "float"){
+        }else if (line[0] == "float" && !condicion){
 
             valorEnviar = convertidor->GenerarFloat(line);
 
-        }else if (line[0] == "{"){
+        }else if (line[0] == "{" && !condicion){
 
             valorEnviar = convertidor->GenerarInicio();
 
-        }else if(line[0] == "}"){
+        }else if(line[0] == "}" && condicion){
+
+            convertidor->structCommand = false;
+            valorEnviar = convertidor->GenerarStruct(line);
+
+        }else if(line[0] == "}" && !condicion){
 
             valorEnviar = convertidor->GenerarFinal();
 
-        }else if (line[0] == "reference"){
+        }else if(condicion){
+
+            convertidor->linesStruct.push_back(instruccions);
+            valorEnviar = "vacio";
+
+        }else if(line[0] == "struct"){
+
+            convertidor->structCommand = true;
+            valorEnviar = "vacio";
+
+        }else if (line[0] == "reference" && !condicion){
 
             valorEnviar = convertidor->GenerarReference(line);
 
@@ -220,8 +252,11 @@ void MainWindow::on_Next_clicked(){
         } else if(valorEnviar == "ErrorDato"){
             ui->Application_Log->appendPlainText(l1->logMessage(2,"El dato no existe"));
             on_stop_clicked();
-        } else if (valorEnviar == "vacia"){
-
+        } else if (valorEnviar == "vacio"){
+            line.clear();
+            i++;
+            ui->editLine->clear();
+            ui->editLine->appendPlainText(QString::number(i));
         } else if(line[0] == "cout"){
             valorEnviar = convertidor->GenerarCout(line);
             ui->Stdout->appendPlainText(QString::fromStdString(valorEnviar));
@@ -254,4 +289,5 @@ void MainWindow::on_reverseButton_clicked()
     string memoriaEnviar = convertidor->Reserve(memoria);
     ui->Application_Log->appendPlainText(l1->logMessage(0,"Reservando memoria"));
     cliente->StartClient(memoriaEnviar);
+    this->reserves = true;
 }

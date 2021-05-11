@@ -685,3 +685,42 @@ string StringParse::GarbageCollector(){
 
     return obj.dump(4);
 }
+
+string StringParse::GenerarStruct(vector<string> datas) {
+
+    string line;
+    vector<string> aux;
+    json obj;
+
+    for (int i = 1; i < datas.size(); i++) {
+
+        for (int j = 0; j < linesStruct.size(); j++) {
+
+            string lineAux = EliminarEspacios(linesStruct[j]);
+
+            SplitString(lineAux,'#',aux);
+
+            obj["type"] = aux[0];
+            obj["name"] = datas[i]+aux[1];
+            obj["value"] = aux[3];
+
+            cliente->StartClient(obj.dump(4));
+
+            sleep(0.5);
+
+            obj.clear();
+
+            aux.clear();
+
+        }
+
+        aux.clear();
+    }
+
+    obj["type"] = "values";
+    obj["name"] = "notValue";
+    obj["value"] = "notValue";
+
+    return obj.dump(4);
+
+}

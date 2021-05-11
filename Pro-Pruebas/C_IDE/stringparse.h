@@ -23,8 +23,9 @@ class StringParse
 public:
 
     Cliente *cliente = new Cliente();
-    vector<string> linesCode;
+    vector<string> linesStruct;
     bool flag;
+    bool structCommand = false;
 
     void SplitString(const string& texto, char del, vector<string>& v);
     string EliminarEspacios(string texto);
@@ -46,7 +47,7 @@ public:
     string Reseteo();
     string Reserve(string memory);
     string GarbageCollector();
-
+    string GenerarStruct(vector<string> datas);
 
 };
 

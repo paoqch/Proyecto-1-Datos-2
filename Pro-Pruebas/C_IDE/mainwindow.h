@@ -33,9 +33,12 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
     int i = 0;
+    bool reserves = false;
     vector<string> linesCode;
     StringParse *convertidor = new StringParse();
     Cliente *cliente = new Cliente();
+    QString l = "Dirrecion,Valor,Etiqueta,Referencia";
+    QStringList l2 = l.split(",");
 
 private slots:
     // acciones de botones
