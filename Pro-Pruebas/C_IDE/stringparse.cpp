@@ -604,7 +604,9 @@ string StringParse::GenerarReference(vector<string> line) {
 
     return "error";
 }
-
+/// Pide el dato solicitado al servidor
+/// \param nameData string
+/// \return string
 string StringParse::PedirDato(string nameData) {
 
     json obj;
@@ -629,6 +631,8 @@ string StringParse::PedirDato(string nameData) {
 
 }
 
+/// Genera dato para que el servidor inicie el bloque de memoria
+/// \return  string
 string StringParse::GenerarFinal() {
 
     json obj;
@@ -639,7 +643,8 @@ string StringParse::GenerarFinal() {
 
     return obj.dump(4);
 }
-
+/// Genere dato para que el servidor finalice el bloque de memoria
+/// \return string
 string StringParse::GenerarInicio() {
 
     json obj;
@@ -650,7 +655,8 @@ string StringParse::GenerarInicio() {
 
     return obj.dump(4);
 }
-
+/// Genera dato para que el servidor reinicia la memoria
+/// \return
 string StringParse::Reseteo() {
 
     json obj;
@@ -662,6 +668,9 @@ string StringParse::Reseteo() {
     return obj.dump(4);
 }
 
+/// Genera el dato para que el servidor reserve la memoria
+/// \param memory string
+/// \return string
 string StringParse::Reserve(string memory) {
 
     json obj;
@@ -674,6 +683,8 @@ string StringParse::Reserve(string memory) {
     return obj.dump(4);
 }
 
+/// Genera el dato para que el servidor inicie el garbage collector
+/// \return string
 string StringParse::GarbageCollector(){
 
     json obj;
@@ -686,6 +697,9 @@ string StringParse::GarbageCollector(){
     return obj.dump(4);
 }
 
+/// Genera el struct para que el servidor genere los datos del struct
+/// \param datas vector<string>
+/// \return string
 string StringParse::GenerarStruct(vector<string> datas) {
 
     string line;

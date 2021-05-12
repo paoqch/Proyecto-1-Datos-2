@@ -3,12 +3,17 @@
 //
 
 #include "MemoryBlock.h"
-
+/// Añada un dato a la memoria
+/// \param data string
+/// \param name string
 void MemoryBlock::AddData(string data, string name) {
     Node *temp =  new(mem+size) Node(data,name);
     size++;
 }
 
+/// Actualiza el dato
+/// \param data string
+/// \param name string
 void MemoryBlock::UpdateData(string data, string name) {
     for (int i = 0; i < size ; i++) {
         if (mem[i].GetName() == name){
@@ -18,6 +23,9 @@ void MemoryBlock::UpdateData(string data, string name) {
     }
 }
 
+/// retora el dato de un elemento de la memoria
+/// \param name string
+/// \return string
 string MemoryBlock::GetData(string name) {
     for (int i = 0; i < size; i++) {
         if (mem[i].GetName() == name) {
@@ -28,6 +36,9 @@ string MemoryBlock::GetData(string name) {
     return "error";
 }
 
+/// Genera un vector<string> con los valores del dato solicitado
+/// \param id int
+/// \return vector<string>
 vector<string> MemoryBlock::GetValues(int id) {
     for (int i = 0; i < size ; i++) {
         if (i == id) {
@@ -50,6 +61,7 @@ vector<string> MemoryBlock::GetValues(int id) {
     }
 }
 
+/// Marca los elementos que el garbage collector debe eliminar
 void MemoryBlock::Delete() {
     for (int i = 0; i < size; i++) {
         if (mem[i].GetIndex() == 1) {
@@ -60,25 +72,25 @@ void MemoryBlock::Delete() {
     }
     RefactorCollector();
 }
-
+/// Imprime todos los valores de la memoria
 void MemoryBlock::Imprimir() {
     for (int i = 0; i < size; i++) {
         cout << mem[i].GetName() << endl;
     }
 }
-
+/// inicia bloque de memoria
 void MemoryBlock::Start() {
     start = size;
 }
-
+/// Finaliza el bloque de memoria
 void MemoryBlock::Finish() {
     finish = size-1;
 }
-
+/// Retorna el size
 int MemoryBlock::GetSize() {
     return size;
 }
-
+/// Elimina el bloque de memoria
 void MemoryBlock::Refactor() {
     int j = finish+1;
     int newSize = size - ((finish-start) + 1);
@@ -89,7 +101,7 @@ void MemoryBlock::Refactor() {
     }
     size = newSize;
 }
-
+///Borra los datos del garbage collector y hace el refactor
 void MemoryBlock::RefactorCollector() {
     iCollector = size-1;
     size-=garbage.size();
@@ -104,7 +116,7 @@ void MemoryBlock::RefactorCollector() {
     garbage.clear();
     notGarbage.clear();
 }
-
+/// Retorna el valor la memoria a cambiar
 bool MemoryBlock::RefactorCollectorAux() {
     for (int i = garbage.size()-1; i != -1; i--) {
 
@@ -116,7 +128,7 @@ bool MemoryBlock::RefactorCollectorAux() {
     }
     return false;
 }
-
+/// Verifica si esta marcado
 bool MemoryBlock::Verificar() {
     int validar = 0;
     for (int j = garbage.size()-1; j != -1 ; j--) {
@@ -130,7 +142,7 @@ bool MemoryBlock::Verificar() {
         return false;
     }
 }
-
+/// Verifica si esta en los no marcados
 bool MemoryBlock::NotVerificar() {
     int validar = 0;
     for (int i = 0;i < notGarbage.size();i++){
@@ -145,11 +157,11 @@ bool MemoryBlock::NotVerificar() {
         return false;
     }
 }
-
+/// Reinicia la memoria
 void MemoryBlock::Reset() {
     size = 0;
 }
-
+/// Reserva la memoria
 void MemoryBlock::Reserve(int memory) {
     if(this->really){
         mem = (Node *) malloc(1024 * 1024 * memory);

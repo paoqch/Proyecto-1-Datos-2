@@ -3,6 +3,7 @@
 //
 
 #include "Servidor.h"
+/// Servidor, inicia, recibe y envia el dato
 void Servidor::StartServer() {
 
     int listening = socket(AF_INET, SOCK_STREAM, 0);

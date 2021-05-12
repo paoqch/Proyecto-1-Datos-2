@@ -108,6 +108,8 @@ void FacadeMemory::EndBlock() {
     memBlock->Refactor();
 }
 
+/// Genera json a partir del string recibido
+/// \param stringObj
 void FacadeMemory::ReceiveJson(string stringObj) {
     json obj = json::parse(stringObj);
     string type = obj["type"].get<string>();
@@ -116,6 +118,9 @@ void FacadeMemory::ReceiveJson(string stringObj) {
     this->Action(obj["type"].get<string>(),obj["name"].get<string>(),obj["value"].get<string>());
 }
 
+
+/// Genera el dato a enviar
+/// \return string
 string FacadeMemory::GenerateString() {
     if (this->data == ""){
         return "vacio";
@@ -123,6 +128,9 @@ string FacadeMemory::GenerateString() {
         return this->data;
     }
 }
+
+
+/// Consigue todos los valores para la Ram View
 
 void FacadeMemory::GetAllsValues() {
 

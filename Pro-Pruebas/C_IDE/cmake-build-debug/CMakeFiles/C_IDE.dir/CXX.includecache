@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/Cliente.cpp
+Cliente.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/Cliente.h
+
 /home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/Cliente.h
 iostream
 -
@@ -25,18 +29,6 @@ string
 -
 json.hpp
 /home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/json.hpp
-
-/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/cmake-build-debug/C_IDE_autogen/EWIEGA46WW/moc_mainwindow.cpp
-../../../mainwindow.h
-/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/mainwindow.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/cmake-build-debug/C_IDE_autogen/mocs_compilation.cpp
-EWIEGA46WW/moc_mainwindow.cpp
-/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/cmake-build-debug/C_IDE_autogen/EWIEGA46WW/moc_mainwindow.cpp
 
 /home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/json.hpp
 algorithm
@@ -368,12 +360,6 @@ QString
 QDebug
 -
 QDateTime
--
-
-/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/main.cpp
-mainwindow.h
-/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/mainwindow.h
-QApplication
 -
 
 /home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/C_IDE/mainwindow.cpp

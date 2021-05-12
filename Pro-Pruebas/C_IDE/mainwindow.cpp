@@ -282,7 +282,7 @@ void MainWindow::on_Next_clicked(){
         on_stop_clicked();
     }
 }
-
+/// Boton para reservar la memoria
 void MainWindow::on_reverseButton_clicked()
 {
     string memoria = ui->editReserve->toPlainText().toStdString();

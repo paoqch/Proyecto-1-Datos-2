@@ -24,6 +24,10 @@ string
 json.hpp
 /home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/json.hpp
 
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.cpp
+MemoryBlock.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.h
+
 /home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/MemoryBlock.h
 Node.h
 /home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.h
@@ -38,9 +42,37 @@ iostream
 typeinfo
 -
 
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.cpp
+Node.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.h
+
 /home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Node.h
 iostream
 -
+
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.cpp
+Servidor.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.h
+
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/Servidor.h
+iostream
+-
+sys/types.h
+-
+unistd.h
+-
+sys/socket.h
+-
+netdb.h
+-
+arpa/inet.h
+-
+string.h
+-
+string
+-
+FacadeMemory.h
+/home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/FacadeMemory.h
 
 /home/richmond/Desktop/Proyecto Final/Pro-Prueba/Pro-Pruebas/Servidor/json.hpp
 algorithm

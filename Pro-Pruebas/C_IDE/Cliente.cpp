@@ -3,7 +3,8 @@
 //
 
 #include "Cliente.h"
-
+/// Envia y recibe datos del servidor
+/// \param enviar string
 void Cliente::StartClient(string enviar) {
 
     int sock= socket(AF_INET, SOCK_STREAM, 0);
@@ -38,6 +39,8 @@ void Cliente::StartClient(string enviar) {
     close(sock);
 }
 
+/// Retorna el dato enviado por el servidor
+/// \return string
 string Cliente::GetDato() {
     return dato;
 }
