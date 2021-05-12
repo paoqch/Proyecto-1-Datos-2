@@ -111,3 +111,7 @@ Botones:
 Run y Next: Para iniciar la ejecucción del código primero daremos click al botón run y para avanzar entre las línas usaremos el botón run.
 Reset: Reinicia la ejecucción y además borra el RamView
 Stop: Reinicia la ejeccucicón pero no borra el RamView
+
+Link Jira:
+
+https://paoqch.atlassian.net/secure/RapidBoard.jspa?rapidView=2&projectKey=PRO1&selectedIssue=PRO1-11&atlOrigin=eyJpIjoiMDhiMWQxZTNjNTY2NDExNmI3Yjg2MGY3YWE5Mjc0MTkiLCJwIjoiaiJ9
